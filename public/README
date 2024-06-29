@@ -1,0 +1,17 @@
+
+
+Popis sloupců tabulky:
+
+ID								Interní identifikátor objektu v plánku (neupravovat!)
+Číslo místnosti					Napevno určené číslo místnosti (nemění se)
+Název místnosti					Popisuje využití místnosti, u tříd je to jejich název, který se každý rok mění
+Další informace k místnosti		Zobrazí se při rozkliknutí, může to být např. seznam lidí v kabinetu nebo třídní učitelé; pro vložení nového řádku vložte sekvenci znaků <br>
+Zobrazit číslo místnosti		Tímto lze vypnout zobrazování čísla místnosti v plánku
+Zobrazit název místnosti		Tímto lze vypnout zobrazování názvu místnosti v plánku
+Posun textu vodorovně			Posouvání popisku v horizontální ose, kladná hodnota posouvá doprava, záporná doleva; toto se hodí k doladění pozice u místností, které nemají obdélníkový tvar
+Posun textu svisle				Posouvání popisku ve vertikální ose, kladná hodnota posouvá dolů, záporná nahoru; toto se hodí k doladění pozice u místností, které nemají obdélníkový tvar
+Velikost fontu					Přepsání velikosti fontu popisku, hodí se u místností, kde nefunguje dobře automatická změna velikosti fontu
+Navigace						Obsahuje seznam všech navigačních linií, které mají být zobrazeny při navigování
+
+
+

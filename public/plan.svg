@@ -1,0 +1,2970 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+     width="170mm"
+     height="110mm"
+     viewBox="0 0 170 110"
+     version="1.1"
+     id="kg-plan-skoly"
+     xml:space="preserve"
+     inkscape:version="1.3.2 (1:1.3.2+202404261509+091e20ef0f)"
+     sodipodi:docname="plan.svg"
+     inkscape:export-filename="../../../../../../opt/www/barty/playground/graph.svg/react-test/public/plan.svg"
+     inkscape:export-xdpi="1000"
+     inkscape:export-ydpi="1000"
+     copyright="(C) 2024 Matyáš Bartaloš"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:svg="http://www.w3.org/2000/svg">
+	<defs
+     id="defs1">
+		<marker
+     style="overflow:visible"
+     id="ArrowWideRounded"
+     refX="0"
+     refY="0"
+     orient="auto-start-reverse"
+     inkscape:stockid="Wide, rounded arrow"
+     markerWidth="1"
+     markerHeight="1"
+     viewBox="0 0 1 1"
+     inkscape:isstock="true"
+     inkscape:collect="always"
+     preserveAspectRatio="xMidYMid">
+			<path
+     style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+     d="M 3,-3 0,0 3,3"
+     transform="rotate(180,0.125,0)"
+     sodipodi:nodetypes="ccc"
+     id="path15" />
+		</marker>
+		<pattern
+     id="grid"
+     width="1"
+     height="1"
+     patternUnits="userSpaceOnUse">
+			<path
+     d="M 8 0 L 0 0 0 8"
+     fill="none"
+     stroke="#ddd"
+     stroke-width="0.2"
+     id="path1" />
+		</pattern>
+		<style
+     id="style1">
+			<![CDATA[
+
+			#kg-plan-skoly * {
+				font-family: 'Prompt';
+			}
+
+			.outline {
+				display: inline;
+				fill: none;
+				stroke: #666;
+				stroke-dasharray: none;
+				stroke-linecap: square;
+				stroke-linejoin: miter;
+				stroke-opacity: 1;
+				stroke-width: 0.8;
+			}
+
+			.outline-dashed {
+				stroke-linecap: butt;
+				stroke-dasharray: 0.8, 0.8;
+				stroke-dashoffset: 0;
+			}
+
+			.wall {
+				display: inline;
+				fill: none;
+				stroke: black;
+				stroke-width: 0.25;
+				stroke-linecap: butt;
+				stroke-linejoin: miter;
+				stroke-opacity: 1;
+			}
+
+			.wall-thick {
+				stroke-width: 0.365;
+			}
+
+			.wall-thin {
+				stroke-width: 0.1;
+			}
+
+			.wall-dashed {
+				stroke-dasharray: 0.25, 0.25;
+				stroke-dashoffset: 0;
+			}
+
+			.wall-glass {
+				stroke: #00a1d9;
+			}
+
+			.door, .stairs {
+				display: inline;
+				fill: none;
+				stroke: black;
+				stroke-width: 0.1;
+				stroke-linecap: butt;
+				stroke-linejoin: miter;
+				stroke-dasharray: none;
+				stroke-opacity: 1;
+			}
+
+			.door-closed {
+				fill: black;
+				stroke: black;
+				stroke-width: 0.075;
+			}
+
+			.room {
+				transition: all 0.05s;
+			}
+
+			.room:hover {
+				filter: saturate(3);
+				cursor: pointer;
+			}
+
+			.room:active {
+				filter: saturate(3) contrast(0.7);
+			}
+
+			.room-bg-zakladka {
+				fill-opacity: 1;
+				fill: #a2a2a2;
+				display: inline;
+			}
+
+			.hall-yellow {
+				fill-opacity: 1;
+				fill: #feffeb;
+				display: inline;
+			}
+
+			.hall-green {
+				fill-opacity: 1;
+				fill: #e3ffdb;
+				display: inline;
+			}
+
+			.hall-blue {
+				fill-opacity: 1;
+				fill: #ebf7ff;
+				display: inline;
+			}
+
+			.room-yellow {
+				fill-opacity: 1;
+				fill: #fffec5;
+				display: inline;
+			}
+
+			.room-green {
+				fill-opacity: 1;
+				fill: #b7ff9a;
+				display: inline;
+			}
+
+			.room-blue {
+				fill-opacity: 1;
+				fill: #c5e8ff;
+				display: inline;
+			}
+
+			.nav {
+				display: none;
+				fill: none;
+				stroke: red;
+				stroke-width: 0.3;
+				stroke-dasharray: 0.3, 0.6;
+				stroke-dashoffset: 0;
+				stroke-opacity: 1;
+				stroke-linejoin: round;
+				stroke-linecap: round;
+			}
+
+			.nav-arrow {
+				marker-start: url(#ArrowWideRounded);
+			}
+
+			.floor-title {
+				font-size:10px;
+				fill:#666;
+				fill-opacity:1;
+				stroke:#666;
+				stroke-width:0.3;
+				stroke-linecap:round;
+				stroke-linejoin:round;
+				user-select: none;
+			}
+
+			@media(prefers-color-scheme: dark){
+				.outline {
+					stroke: #aaa;
+				}
+
+				.room-bg-zakladka {
+					fill: #444;
+				}
+
+				.floor-title {
+					fill: white;
+					stroke: white;
+				}
+			}
+			]]>
+		</style>
+	</defs>
+	<rect
+     id="background"
+     style="display: none"
+     width="400"
+     height="300"
+     fill="url(#grid)"
+     x="-100"
+     y="-100" />
+	<g
+     id="floor-2"
+     inkscape:label="Patro 2">
+		<g
+     inkscape:groupmode="layer"
+     id="layer-rooms-2"
+     inkscape:label="Mistnosti 2"
+     inkscape:highlight-color="#33f321">
+			<path
+     id="zakladka-t2"
+     d="m 108.4,46 v 12 18 12 h 56 V 76 h -6 V 58 h 6 V 46 Z m 3,12 h 9 v 18 h -9 z m 21,0 h 12 v 18 h -12 z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-m2"
+     d="m 78.4,25.6 v 7.2 h 8 v 18 h -8 V 58 h 30 v -7.2 h -12 v -18 h 12 v -7.2 z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-z2"
+     d="m 48.4,0.4 v 7.2 h 8 v 18 h -8 v 7.2 h 30 v -7.2 h -12 v -18 h 12 V 0.4 Z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-v2"
+     d="m 0.4,20.8 5e-4,42 H 48.4 v -12 h -3 v -18 h 3 v -12 z m 12,12 h 12 v 18 h -12 z m 24,0 h 6 v 18 h -6 z"
+     sodipodi:nodetypes="ccccccccccccccccccc"
+     class="room room-bg-zakladka" />
+			<path
+     id="hall-m2"
+     class="hall-blue"
+     d="m 86.4,81.4 v 4.8 12 3 h 10 v -3 H 90 v -4 h 4.9 v -4 H 90 v -4 h 6.4 v -4.8 z" />
+			<rect
+     id="room-m2-09b"
+     width="1.5"
+     height="4"
+     x="94.9"
+     y="90.2"
+     class="room room-blue" />
+			<rect
+     id="room-m2-09"
+     width="6.4"
+     height="4"
+     x="90"
+     y="86.2"
+     class="room room-blue" />
+			<rect
+     id="room-m2-08"
+     width="2.4"
+     height="2.4"
+     x="90"
+     y="94.2"
+     class="room room-blue" />
+			<path
+     id="room-m2-07"
+     d="m 92.4,94.2 v 2.4 H 90 v 1.6 h 2.4 4 v -4 z"
+     class="room room-blue" />
+			<rect
+     id="room-m2-06a"
+     width="3.5"
+     height="7.2"
+     x="104.9"
+     y="101.2"
+     class="room room-blue" />
+			<path
+     id="room-m2-06"
+     d="m 94.3,101.2 v 1.7 h 2.1 v 5.5 h 8.5 v -7.2 h -8.5 z"
+     class="room room-blue" />
+			<path
+     id="room-m2-05"
+     d="m 88.5,101.2 v 1.7 h -2.1 v 5.5 h 10 v -5.5 h -2.1 v -1.7 z"
+     class="room room-blue" />
+			<path
+     id="room-m2-04"
+     d="m 78.4,101.2 v 7.2 h 8 v -5.5 h 2.1 v -1.7 h -2.1 z"
+     class="room room-blue" />
+			<rect
+     id="room-m2-03"
+     width="8"
+     height="7.2"
+     x="78.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-m2-02"
+     width="10"
+     height="5.4"
+     x="86.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-m2-01a"
+     width="3.5"
+     height="7.2"
+     x="104.9"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-m2-01"
+     width="8.5"
+     height="7.2"
+     x="96.4"
+     y="76"
+     class="room room-blue" />
+			<path
+     id="hall-z2"
+     class="hall-green"
+     d="M 56.4,56.2 V 73 H 60 v -4 h 4.9 V 65 H 60 v -4 h 6.4 v -3 h 3 v -1.8 h -3 -6.4 z m 0,16.8 v 3 h 10 v -3 z" />
+			<rect
+     id="room-z2-10b"
+     width="1.5"
+     height="4"
+     x="64.9"
+     y="65"
+     class="room room-green" />
+			<rect
+     id="room-z2-10"
+     width="6.4"
+     height="4"
+     x="60"
+     y="61"
+     class="room room-green" />
+			<rect
+     id="room-z2-09"
+     width="2.4"
+     height="2.4"
+     x="60"
+     y="69"
+     class="room room-green" />
+			<path
+     id="room-z2-08"
+     d="m 62.4,69 v 2.4 H 60 V 73 h 2.4 4 v -4 z"
+     class="room room-green" />
+			<rect
+     id="room-z2-07a"
+     width="3.5"
+     height="7.2"
+     x="74.9"
+     y="76"
+     class="room room-green" />
+			<path
+     id="room-z2-07"
+     d="m 64.3,76 v 1.7 h 2.1 v 5.5 h 8.5 V 76 h -8.5 z"
+     class="room room-green" />
+			<path
+     id="room-z2-06"
+     d="m 58.5,76 v 1.7 h -2.1 v 5.5 h 10 V 77.7 H 64.3 V 76 Z"
+     class="room room-green" />
+			<path
+     id="room-z2-05"
+     d="m 48.4,76 v 7.2 h 8 v -5.5 h 2.1 V 76 h -2.1 z"
+     class="room room-green" />
+			<rect
+     id="room-z2-04"
+     width="8"
+     height="7.2"
+     x="48.4"
+     y="50.8"
+     class="room room-green" />
+			<rect
+     id="room-z2-03"
+     width="6.6"
+     height="5.4"
+     x="56.4"
+     y="50.8"
+     class="room room-green" />
+			<rect
+     id="room-z2-02a"
+     width="3"
+     height="1.8"
+     x="66.4"
+     y="54.4"
+     class="room room-green" />
+			<path
+     id="room-z2-02"
+     d="m 63,50.8 v 3.6 1.8 h 3.4 v -1.8 h 3 v -3.6 z"
+     class="room room-green" />
+			<rect
+     id="room-z2-01"
+     width="9"
+     height="7.2"
+     x="69.4"
+     y="50.8"
+     class="room room-green" />
+		</g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer-walls-2"
+     inkscape:label="Steny 2"
+     inkscape:highlight-color="#ff4e4e">
+			<path
+     class="stairs"
+     d="m 90,90.2 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0,-2 H 90"
+     id="stairs-m2"
+     sodipodi:nodetypes="cccccccccccccccccccc" /><path
+     class="wall"
+     d="m 94.9,90.2 v 4"
+     id="wall-m2-09a"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall wall-thick"
+     d="m 90,90.2 h 6.4"
+     id="wall-m2-09"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 92.4,94.2 v 2.4 H 90"
+     id="wall-m2-08"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="wall wall-thick"
+     d="m 90,94.2 h 6.4"
+     id="wall-m2-07"
+     sodipodi:nodetypes="cc" />
+			<path
+     id="wall-m2-wc"
+     class="wall"
+     d="M 96.4,98.2 H 90 v -0.34 m 0,-0.9 v -0.7 m 0,-0.9 v -1.34 m 0,-3.64 v -3.01 m 0,-0.9 V 86.2 h 6.4" />
+			<path
+     class="wall"
+     d="m 104.9,101.2 v 1 m 0,0.8 v 5.4"
+     id="wall-m2-06a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 94.3,101.2 v 1.7 h 2.1 v 5.5"
+     id="wall-m2-06"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 86.4,101.2 h 0.75 m 0.9,0 h 1.3 m 0.9,0 h 4.6 m 0.9,0 h 0.65"
+     id="wall-m2-05"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="wall"
+     d="m 86.4,108.4 v -5.5 h 2.1 v -1.7"
+     id="wall-m2-04"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 86.4,83.2 v -0.6 m 0,-0.9 V 76"
+     class="wall"
+     id="wall-m2-03"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 96.4,81.4 h -1.95 m -0.9,0 h -4.2 m -0.9,0 H 86.4"
+     id="wall-m2-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 104.9,76 v 5.7 m 0,0.8 v 0.7"
+     class="wall"
+     id="wall-m2-01a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 96.4,83.2 v -0.6 m 0,-0.9 V 76"
+     id="wall-m2-01"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="door"
+     d="m 89.8,86.47 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m2-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,95.36 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m2-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,96.96 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m2-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 104.7,102.2 h 0.2 0.2 m -0.4,0.8 h 0.2 0.2"
+     id="door-m2-06a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 94.85,101.4 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m2-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 89.35,101.4 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m2-05"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 87.15,101.4 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m2-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 86.2,81.7 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-m2-03" /><path
+     d="m 93.55,81.4 h 0.9"
+     id="door-m2-02a-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="m 93.55,81.6 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m2-02a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 88.45,81.6 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m2-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 104.7,81.7 h 0.2 0.2 m -0.4,0.8 h 0.2 0.2"
+     class="door"
+     id="door-m2-01a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 96.2,81.7 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-m2-01"
+     sodipodi:nodetypes="cccccc" />
+			
+			<path
+     class="stairs"
+     d="m 60,65 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 M 62,65 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0,-2 H 60"
+     id="stairs-z2"
+     sodipodi:nodetypes="cccccccccccccccccccc" /><path
+     class="wall"
+     d="m 64.9,65 v 4"
+     id="wall-z2-10b"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall wall-thick"
+     d="m 60,65 h 6.4"
+     id="wall-z2-10"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 62.4,69 v 2.4 H 60"
+     id="wall-z2-09"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="wall wall-thick"
+     d="m 60,69 h 6.4"
+     id="wall-z2-08"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="M 60,72.66 V 73 h 6.4 M 60,71.76 v -0.7 m 0,-0.9 v -1.34 m 0,-3.64 v -3.01 m 0,-0.9 V 61 h 6.4"
+     id="wall-z2-wc"
+     sodipodi:nodetypes="cccccccccccc" />
+			<path
+     class="wall"
+     d="m 74.9,83.2 v -5.35 m 0,-0.9 V 76"
+     id="wall-z2-07a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 64.3,76 v 1.7 h 2.1 v 5.5"
+     id="wall-z2-07"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 56.4,76 h 0.75 m 0.9,0 h 1.3 m 0.9,0 h 4.6 m 0.9,0 h 0.65"
+     id="wall-z2-06"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="wall"
+     d="m 56.4,83.2 v -5.5 h 2.1 V 76"
+     id="wall-z2-05"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 56.4,58 v -0.6 m 0,-0.9 v -5.7"
+     class="wall"
+     id="wall-z2-04"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 63,56.2 v -0.45 m 0,-0.9 V 50.8"
+     id="wall-z2-03a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 69.4,56.2 h -3.35 m -0.9,0 c -2.92,0 -5.83,0 -8.75,0"
+     id="wall-z2-03"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 66.4,56.2 v -0.45 m 0,-0.9 V 54.4"
+     id="wall-z2-02a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 69.4,54.4 h -4.9 m -1,0 H 63"
+     id="wall-z2-02"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 69.4,58 v -0.6 m 0,-0.9 v -3.65 m 0,-0.9 V 50.8"
+     id="wall-z2-01"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,61.27 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z2-10"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,70.16 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z2-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,71.76 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z2-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 74.7,76.95 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z2-07a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 64.85,76.2 V 76 75.8 m 0.9,0.4 V 76 75.8"
+     class="door"
+     id="door-z2-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 59.35,76.2 V 76 75.8 m 0.9,0.4 V 76 75.8"
+     class="door"
+     id="door-z2-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 57.15,76.2 V 76 75.8 m 0.9,0.4 V 76 75.8"
+     class="door"
+     id="door-z2-05"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 56.2,56.5 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z2-04" />
+			<path
+     d="m 62.8,54.85 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z2-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 69.2,51.95 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z2-02b" />
+			<path
+     d="m 66.2,54.85 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z2-02a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 65.15,56.4 V 56.2 56 m 0.9,0.4 V 56.2 56"
+     class="door"
+     id="door-z2-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 69.2,56.5 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z2-01"
+     sodipodi:nodetypes="cccccc" />
+			
+		</g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer-outline-2"
+     inkscape:label="Obrys 2"
+     inkscape:highlight-color="#f3cf21">
+			<path
+     id="obrys-zm2"
+     d="m 86.4,32.8 v 0 h -8 v -7.2 h 30 v 7.2 h -12 v 18 h 12 V 58 h -30 v -7.2 h 8 v -18"
+     class="outline" />
+			<path
+     id="obrys-zz2"
+     d="m 56.4,7.6 v 0 h -8 V 0.4 h 30 v 7.2 h -12 v 18 h 12 v 7.2 h -30 v -7.2 h 8 v -18"
+     class="outline"
+     sodipodi:nodetypes="cccccccccccccc" />
+			<path
+     id="obrys-t2"
+     d="m 108.4,46 h 56 v 12 h -6 v 18 h 6 v 12 h -56 c 0,-14.27 0,-30 0,-42 z m 36,30 V 58 h -12 v 18 z m -24,0 V 58 h -9 v 18 z"
+     sodipodi:nodetypes="ccccccccccccccccccc"
+     class="outline" />
+			<path
+     id="obrys-z2"
+     d="m 56.4,58 v 0 h -8 v -7.2 h 30 V 58 h -12 v 18 h 12 v 7.2 h -30 V 76 h 8 V 58"
+     class="outline" />
+			<path
+     id="obrys-m2"
+     d="m 86.4,83.2 v 0 h -8 V 76 h 30 v 7.2 h -12 v 18 h 12 v 7.2 h -30 v -7.2 h 8 v -18"
+     class="outline" />
+			<path
+     id="obrys-v2"
+     d="m 12.4,50.8 v -18 h 12 v 18 z m 30,0 h -6 v -18 h 6 z m -42,-30 h 48 v 12 h -3 v 18 h 3 v 12 h -48 z"
+     sodipodi:nodetypes="ccccccccccccccccccc"
+     class="outline" />
+	 <text
+     xml:space="preserve"
+     class="floor-title"
+     x="4"
+     y="83"
+     id="text22">2. patro</text>
+		</g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Navigace 2"
+     inkscape:highlight-color="#2f54f2">
+			<path
+     class="nav"
+     d="m 90,86.9 h -0.8 v 6.3 H 94 v -1.91 h -3.6"
+     id="nav-m2-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 90,95.79 H 89.2 V 93.2 H 94 v -1.91 h -3.6"
+     id="nav-m2-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 90,97.4 H 89.2 V 93.2 H 94 v -1.91 h -3.6"
+     id="nav-m2-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 104.9,102.5 H 95.35 V 99.68 H 88.5 V 93.2 H 94 v -1.91 h -3.6"
+     id="nav-m2-06a"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="nav"
+     d="M 95.3,101.2 V 99.68 H 88.5 V 93.2 H 94 v -1.91 h -3.6"
+     id="nav-m2-06"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 89.8,101.2 V 99.68 H 88.5 V 93.2 H 94 v -1.91 h -3.6"
+     id="nav-m2-05"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="m 87.6,101.2 v -8 H 94 v -1.91 h -3.6"
+     id="nav-m2-04"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 86.4,82.2 h 1.1 v 11 H 94 v -1.91 h -3.6"
+     id="nav-m2-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 88.9,81.4 V 93.2 H 94 v -1.91 h -3.6"
+     id="nav-m2-02"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 104.9,82.2 H 89.2 v 11 H 94 v -1.91 h -3.6"
+     id="nav-m2-01a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="m 96.4,82.2 h -7.2 v 11 H 94 v -1.91 h -3.6"
+     id="nav-m2-01"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="m 60,61.7 h -0.8 v 6.29 H 64 v -1.9 h -3.6"
+     id="nav-z2-10"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="m 60,70.59 h -0.8 v -2.6 H 64 v -1.9 h -3.6"
+     id="nav-z2-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 60,72.2 H 59.2 V 67.99 H 64 v -1.9 h -3.6"
+     id="nav-z2-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="m 74.9,77.29 h -9.6 v -2.8 h -6.8 v -6.5 H 64 v -1.9 h -3.6"
+     id="nav-z2-07a"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="nav"
+     d="m 65.3,75.99 v -1.5 h -6.8 v -6.5 H 64 v -1.9 h -3.6"
+     id="nav-z2-07"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="m 59.8,75.99 v -1.5 h -1.3 v -6.5 H 64 v -1.9 h -3.6"
+     id="nav-z2-06"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="m 57.6,75.99 v -8 H 64 v -1.9 h -3.6"
+     id="nav-z2-05"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 56.4,57 h 1.1 V 68 H 64 v -1.91 h -3.6"
+     id="nav-z2-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="m 63,55.3 h 2.7 V 57 H 59.2 V 67.99 H 64 v -1.9 h -3.6"
+     id="nav-z2-03"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="nav"
+     d="M 65.7,56.2 V 57 H 59.2 V 67.99 H 64 v -1.9 h -3.6"
+     id="nav-z2-02"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 69.4,57 H 59.2 V 67.99 H 64 v -1.9 h -3.6"
+     id="nav-z2-01"
+     sodipodi:nodetypes="cccccc" />
+		</g>
+	</g>
+	<g
+     id="floor-1"
+     inkscape:label="Patro 1">
+		<g
+     inkscape:groupmode="layer"
+     id="layer-rooms-1"
+     inkscape:label="Mistnosti 1"
+     inkscape:highlight-color="#33f321">
+			<path
+     id="zakladka-t1"
+     d="m 108.4,46 v 12 18 12 h 56 V 76 h -6 V 58 h 6 V 46 Z m 3,12 h 9 v 18 h -9 z m 21,0 h 12 v 18 h -12 z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-m1"
+     d="m 78.4,25.6 v 7.2 h 8 v 18 h -8 V 58 h 30 v -7.2 h -12 v -18 h 12 v -7.2 z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-z1"
+     d="m 48.4,0.4 v 7.2 h 8 v 18 h -8 v 7.2 h 30 v -7.2 h -12 v -18 h 12 V 0.4 Z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-v1"
+     d="m 0.3995,20.8 5e-4,42 h 48 v -12 h -3 v -18 h 3 v -12 z M 12.4,32.8 h 12 v 18 h -12 z m 24,0 h 6 v 18 h -6 z"
+     sodipodi:nodetypes="ccccccccccccccccccc"
+     class="room room-bg-zakladka" />
+			<path
+     id="hall-m1"
+     class="hall-blue"
+     d="m 86.4,81.4 v 4.8 12 0 3 h 10 v -3 H 90 v -4 h 4.9 v -4 H 90 v -4 h 6.4 v -3 h 3 v -1.8 h -3 z" />
+			<rect
+     id="room-m1-09b"
+     width="1.5"
+     height="4"
+     x="94.9"
+     y="90.2"
+     class="room room-blue" />
+			<rect
+     id="room-m1-09"
+     width="6.4"
+     height="4"
+     x="90"
+     y="86.2"
+     class="room room-blue" />
+			<rect
+     id="room-m1-08"
+     width="2.4"
+     height="2.4"
+     x="90"
+     y="94.2"
+     class="room room-blue" />
+			<path
+     id="room-m1-07"
+     d="m 92.4,94.2 v 2.41 H 90 v 1.59 h 2.4 4 v -4 z"
+     class="room room-blue" />
+			<rect
+     id="room-m1-06a"
+     width="3.5"
+     height="7.2"
+     x="104.9"
+     y="101.2"
+     class="room room-blue" />
+			<path
+     id="room-m1-06"
+     d="m 94.3,101.2 v 1.7 h 2.1 v 5.5 h 8.5 v -7.2 h -8.5 z"
+     class="room room-blue" />
+			<path
+     id="room-m1-05"
+     d="m 88.5,101.2 v 1.7 h -2.1 v 5.5 h 10 v -5.5 h -2.1 v -1.7 z"
+     class="room room-blue" />
+			<path
+     id="room-m1-04"
+     d="m 78.4,101.2 v 7.2 h 8 v -5.5 h 2.1 v -1.7 h -2.1 z"
+     class="room room-blue" />
+			<rect
+     id="room-m1-03"
+     width="8"
+     height="7.2"
+     x="78.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-m1-02"
+     width="13"
+     height="5.4"
+     x="86.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-m1-01"
+     width="9"
+     height="7.2"
+     x="99.4"
+     y="76"
+     class="room room-blue" />
+			<path
+     id="hall-z1"
+     class="hall-green"
+     d="M 58.32,56.2 V 58 H 56.4 V 76 H 60 66.4 V 73 H 60 v -4 h 4.9 V 65 H 60 v -7 h 7.8 v -1.8 z" />
+			<rect
+     id="room-z1-11"
+     width="6.4"
+     height="3"
+     x="60"
+     y="58"
+     class="room room-green" />
+			<rect
+     id="room-z1-10b"
+     width="1.5"
+     height="4"
+     x="64.9"
+     y="65"
+     class="room room-green" />
+			<rect
+     id="room-z1-10"
+     width="6.4"
+     height="4"
+     x="60"
+     y="61"
+     class="room room-green" />
+			<rect
+     id="room-z1-09"
+     width="2.4"
+     height="2.4"
+     x="60"
+     y="69"
+     class="room room-green" />
+			<path
+     id="room-z1-08"
+     d="m 62.4,69 v 2.41 H 60 V 73 h 2.4 4 v -4 z"
+     class="room room-green" />
+			<rect
+     id="room-z1-07a"
+     width="3.5"
+     height="7.2"
+     x="74.9"
+     y="76"
+     class="room room-green" />
+			<path
+     id="room-z1-07"
+     d="m 64.3,76 v 1.7 h 2.1 v 5.5 h 8.5 V 76 h -8.5 z"
+     class="room room-green" />
+			<path
+     id="room-z1-06"
+     d="m 58.5,76 v 1.7 h -2.1 v 5.5 h 10 V 77.7 H 64.3 V 76 Z"
+     class="room room-green" />
+			<path
+     id="room-z1-05"
+     d="m 48.4,76 v 7.2 h 8 v -5.5 h 2.1 V 76 h -2.1 z"
+     class="room room-green" />
+			<rect
+     id="room-z1-04"
+     width="9.925"
+     height="7.2"
+     x="48.4"
+     y="50.8"
+     class="room room-green" />
+			<rect
+     id="room-z1-03"
+     width="6.275"
+     height="5.4"
+     x="58.33"
+     y="50.8"
+     class="room room-green" />
+			<rect
+     id="room-z1-02"
+     width="3.2"
+     height="5.4"
+     x="64.6"
+     y="50.8"
+     class="room room-green" />
+			<rect
+     id="room-z1-01"
+     width="10.6"
+     height="7.2"
+     x="67.8"
+     y="50.8"
+     class="room room-green" />
+		</g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer-walls-1"
+     inkscape:label="Steny 1"
+     inkscape:highlight-color="#ff4e4e">
+			<path
+     class="stairs"
+     d="m 90,90.2 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0,-2 H 90"
+     id="stairs-m1"
+     sodipodi:nodetypes="cccccccccccccccccccc" /><path
+     id="wall-m1-wc"
+     class="wall"
+     d="M 96.4,98.2 H 90 v -0.34 m 0,-0.9 v -0.7 m 0,-0.9 v -1.34 m 0,-3.64 v -3.01 m 0,-0.9 V 86.2 h 6.4" />
+			<path
+     class="wall"
+     d="m 94.9,90.2 v 4"
+     id="wall-m1-09a"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall wall-thick"
+     d="m 90,90.2 h 6.4"
+     id="wall-m1-09"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 92.4,94.2 v 2.4 H 90"
+     id="wall-m1-08"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="wall wall-thick"
+     d="m 90,94.2 h 6.4"
+     id="wall-m1-07"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 104.9,101.2 v 1 m 0,0.8 v 5.4"
+     id="wall-m1-06a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 94.3,101.2 v 1.7 h 2.1 v 5.5"
+     id="wall-m1-06"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 86.4,101.2 h 0.75 m 0.9,0 h 1.3 m 0.9,0 h 4.6 m 0.9,0 h 0.65"
+     id="wall-m1-05"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="wall"
+     d="m 86.4,108.4 v -5.5 h 2.1 v -1.7"
+     id="wall-m1-04"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 86.4,83.2 v -0.6 m 0,-0.9 V 76"
+     class="wall"
+     id="wall-m1-03"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 99.4,81.4 h -3.35 m -0.9,0 h -5.8 m -0.9,0 H 86.4"
+     id="wall-m1-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="wall"
+     d="m 99.4,83.2 v -0.6 m 0,-0.9 V 76"
+     id="wall-m1-01"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="door"
+     d="m 89.8,86.47 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m1-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,95.36 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m1-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,96.96 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m1-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 104.7,102.2 h 0.2 0.2 m -0.4,0.8 h 0.2 0.2"
+     id="door-m1-06a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 94.85,101.4 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m1-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 89.35,101.4 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m1-05"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 87.15,101.4 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m1-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 86.2,81.7 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-m1-03" /><path
+     d="m 95.15,81.4 h 0.9"
+     id="door-m1-02a-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="m 95.15,81.6 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m1-02a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 88.45,81.6 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m1-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 99.2,81.7 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-m1-01" />
+			<path
+     class="stairs"
+     d="m 60,65 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 M 62,65 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0,-2 H 60"
+     id="stairs-z1"
+     sodipodi:nodetypes="cccccccccccccccccccc" />
+			<path
+     class="wall"
+     d="M 60,72.66 V 73 h 6.4 M 60,71.76 v -0.7 m 0,-0.9 v -1.34 m 0,-3.64 v -3.01 m 0,-0.9 V 58"
+     id="wall-z1-wc"
+     sodipodi:nodetypes="ccccccccccc" />
+			<path
+     class="wall"
+     d="m 66.4,58 h -2.35 m -0.9,0 H 59.6 m -0.9,0 h -0.75 m -0.9,0 H 56.4"
+     id="wall-z1-12"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="wall"
+     d="m 60,61 h 6.4"
+     id="wall-z1-11"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 64.9,65 v 4"
+     id="wall-z1-10b"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall wall-thick"
+     d="m 60,65 h 6.4"
+     id="wall-z1-10"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 62.4,69 v 2.4 H 60"
+     id="wall-z1-09"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="wall wall-thick"
+     d="m 60,69 h 6.4"
+     id="wall-z1-08"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 74.9,83.2 v -5.35 m 0,-0.9 V 76"
+     id="wall-z1-07a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 64.3,76 v 1.7 h 2.1 v 5.5"
+     id="wall-z1-07"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 56.4,76 h 0.75 m 0.9,0 h 1.3 m 0.9,0 h 4.6 m 0.9,0 h 0.65"
+     id="wall-z1-06"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="wall"
+     d="m 56.4,83.2 v -5.5 h 2.1 V 76"
+     id="wall-z1-05"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 58.3,50.8 v 1.15 m 0,0.9 V 58"
+     id="wall-z1-04"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 58.3,56.2 h 1.05 m 0.9,0 h 5 m 0.9,0 h 1.65"
+     id="wall-z1-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="wall"
+     d="m 64.6,50.8 v 5.4"
+     id="wall-z1-02"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 67.8,50.8 v 1.15 m 0,0.9 v 3.7 m 0,0.9 V 58"
+     id="wall-z1-01"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="M 59.6,58.2 V 58 57.8 m -0.9,0.4 V 58 57.8"
+     id="door-z1-12"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="M 63.15,58.2 V 58 57.8 m 0.9,0.4 V 58 57.8"
+     id="door-z1-11"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,61.27 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z1-10"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,70.16 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z1-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,71.76 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z1-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 74.7,76.95 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z1-07a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 64.85,76.2 V 76 75.8 m 0.9,0.4 V 76 75.8"
+     class="door"
+     id="door-z1-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 59.35,76.2 V 76 75.8 m 0.9,0.4 V 76 75.8"
+     class="door"
+     id="door-z1-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 57.15,76.2 V 76 75.8 m 0.9,0.4 V 76 75.8"
+     class="door"
+     id="door-z1-05"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="M 57.05,58.2 V 58 57.8 m 0.9,0.4 V 58 57.8"
+     id="door-z1-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="M 59.35,56.4 V 56.2 56 m 0.9,0.4 V 56.2 56"
+     id="door-z1-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="M 65.25,56.4 V 56.2 56 m 0.9,0.4 V 56.2 56"
+     id="door-z1-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 58.1,51.95 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z1-03a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 67.8,51.95 v 0.9"
+     id="door-z1-02a-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc" /><path
+     d="m 67.6,51.95 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z1-02a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 67.6,56.55 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-z1-01"
+     sodipodi:nodetypes="cccccc" />
+			
+		</g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer-outline-1"
+     inkscape:label="Obrys 1"
+     inkscape:highlight-color="#f3cf21">
+			<path
+     id="obrys-zm1"
+     d="m 86.4,32.8 v 0 h -8 v -7.2 h 30 v 7.2 h -12 v 18 h 12 V 58 h -30 v -7.2 h 8 v -18"
+     class="outline" />
+			<path
+     id="obrys-zz1"
+     d="m 56.4,7.6 v 0 h -8 V 0.4 h 30 v 7.2 h -12 v 18 h 12 v 7.2 h -30 v -7.2 h 8 v -18"
+     class="outline"
+     sodipodi:nodetypes="cccccccccccccc" />
+			<path
+     id="obrys-t1"
+     d="m 108.4,46 h 56 v 12 h -6 v 18 h 6 v 12 h -56 c 0,-14.27 0,-30.04 0,-42 z m 36,30 V 58 h -12 v 18 z m -24,0 V 58 h -9 v 18 z"
+     sodipodi:nodetypes="ccccccccccccccccccc"
+     class="outline" />
+			<path
+     id="obrys-z1"
+     d="m 56.4,58 v 0 h -8 v -7.2 h 30 V 58 h -12 v 18 h 12 v 7.2 h -30 V 76 h 8 V 58"
+     class="outline" />
+			<path
+     id="obrys-m1"
+     d="m 86.4,83.2 v 0 h -8 V 76 h 30 v 7.2 h -12 v 18 h 12 v 7.2 h -30 v -7.2 h 8 v -18"
+     class="outline" />
+			<path
+     id="obrys-v1"
+     d="m 12.4,50.8 v -18 h 12 v 18 z m 30,0 h -6 v -18 h 6 z m -42,-30 h 48 v 12 h -3 v 18 h 3 v 12 h -48 z"
+     sodipodi:nodetypes="ccccccccccccccccccc"
+     class="outline" />
+	 <text
+     xml:space="preserve"
+     class="floor-title"
+     x="4"
+     y="83"
+     id="text33">1. patro</text>
+		</g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Navigace 1">
+			<path
+     class="nav nav-arrow"
+     d="M 90.4,93.2 H 94 v -1.9 h -3.6"
+     id="nav-m1-m2"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="m 90,86.9 h -0.8 v 6.3 H 94 v -1.9 h -3.6"
+     id="nav-m1-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 90,95.8 H 89.2 V 93.2 H 94 v -1.9 h -3.6"
+     id="nav-m1-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 90,97.4 H 89.2 V 93.2 H 94 v -1.9 h -3.6"
+     id="nav-m1-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 104.9,102.5 H 95.35 V 99.7 H 88.5 V 93.2 H 94 v -1.9 h -3.6"
+     id="nav-m1-06a"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="nav"
+     d="M 95.3,101.2 V 99.7 H 88.5 V 93.2 H 94 v -1.9 h -3.6"
+     id="nav-m1-06"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 89.8,101.2 V 99.65 H 88.5 V 93.2 H 94 v -1.9 h -3.6"
+     id="nav-m1-05"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="m 87.6,101.2 v -8 H 94 v -1.9 h -3.6"
+     id="nav-m1-04"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 86.4,82.2 h 1.1 v 11 H 94 v -1.9 h -3.6"
+     id="nav-m1-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 88.9,81.4 V 93.2 H 94 v -1.9 h -3.6"
+     id="nav-m1-02"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 99.4,82.2 H 89.2 v 11 H 94 v -1.9 h -3.6"
+     id="nav-m1-01"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav nav-arrow"
+     d="M 60.4,68 H 64 v -1.9 h -3.6"
+     id="nav-z1-z2"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 63.6,58 V 57 H 59.2 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-11"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 60,61.7 H 59.2 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-10"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 60,70.6 H 59.2 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 60,72.2 H 59.2 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 74.9,77.3 H 65.3 V 74.5 H 58.5 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-07a"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="nav"
+     d="M 65.3,76 V 74.5 H 58.5 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-07"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 59.8,76 V 74.5 H 58.5 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-06"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 57.6,76 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-05"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 57.5,58 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-04"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 59.8,56.2 V 57 H 59.2 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-03"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 65.7,56.2 V 57 H 59.2 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-02"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="M 67.8,57 H 59.2 V 68 H 64 v -1.9 h -3.6"
+     id="nav-z1-01"
+     sodipodi:nodetypes="cccccc" />
+		</g>
+	</g>
+	<g
+     class="canvas"
+     id="floor-0"
+     inkscape:label="Patro 0">
+		<sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="true"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.414"
+     inkscape:cx="114.2"
+     inkscape:cy="304.1"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer-outline-0"
+     showborder="true"
+     borderlayer="true"
+     labelstyle="default"
+     shape-rendering="auto"
+     inkscape:clip-to-page="false" />
+		<g
+     inkscape:groupmode="layer"
+     id="layer-rooms-0"
+     inkscape:label="Mistnosti 0"
+     inkscape:highlight-color="#33f321">
+			<path
+     id="zakladka-t0"
+     d="m 108.4,46 v 12 11.8 h 3 V 58 h 33 v 12 h 7 v 6 h 7 V 70 58 h 6 V 46 Z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-m0"
+     d="m 78.4,25.6 v 7.2 h 8 v 18 h -8 V 58 h 30 v -7.2 h -12 v -18 h 12 v -7.2 z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-z0"
+     d="m 48.4,0.4 v 7.2 h 8 v 18 h -8 v 7.2 h 30 v -7.2 h -12 v -18 h 12 V 0.4 Z"
+     class="room room-bg-zakladka" />
+			<path
+     id="zakladka-v0"
+     d="m 0.3998,20.8 v 12 14.87 H 2.4 v 3.13 h 10 V 47.67 32.8 h 12 v 12 h 12 v -12 h 6 v 12 h 3 v -12 h 3 v -12 z"
+     class="room room-bg-zakladka" />
+			<path
+     id="hall-t0"
+     class="hall-blue"
+     d="M 108.4,69.8 V 78.84 82 h 9 v 4.5 h 3 V 82 h 18 v -3.16 h -9 V 76 h -4 v 2.84 h -14 V 69.8 Z" />
+			<rect
+     id="room-t0-13"
+     width="4.5"
+     height="1.419"
+     x="111.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-t0-12"
+     width="4.5"
+     height="1.419"
+     x="111.4"
+     y="77.42"
+     class="room room-blue" />
+			<rect
+     id="room-t0-11"
+     width="4.5"
+     height="2.838"
+     x="115.9"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-t0-10a"
+     width="5"
+     height="2.838"
+     x="120.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-t0-10"
+     width="12"
+     height="18"
+     x="120.4"
+     y="58"
+     class="room room-blue" />
+			<rect
+     id="room-t0-09"
+     width="6"
+     height="2.838"
+     x="129.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-t0-08"
+     width="3"
+     height="2.838"
+     x="135.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-t0-07a"
+     width="7"
+     height="6"
+     x="144.4"
+     y="70"
+     class="room room-blue" />
+			<rect
+     id="room-t0-07"
+     width="26"
+     height="12"
+     x="138.4"
+     y="76"
+     class="room room-blue" />
+			<rect
+     id="room-t0-06c"
+     width="3"
+     height="6"
+     x="132.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-06b"
+     width="3"
+     height="6"
+     x="135.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-06a"
+     width="3"
+     height="6"
+     x="129.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-05c"
+     width="3"
+     height="6"
+     x="123.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-05b"
+     width="3"
+     height="6"
+     x="126.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-05a"
+     width="3"
+     height="6"
+     x="120.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-04a"
+     width="3"
+     height="1.5"
+     x="117.4"
+     y="86.5"
+     class="room room-blue" />
+			<path
+     id="room-t0-04"
+     d="m 115.9,82 v 1.8 h -1.5 V 88 h 3 V 83.8 82 Z"
+     class="room room-blue" />
+			<rect
+     id="room-t0-03"
+     width="1.5"
+     height="1.8"
+     x="114.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-02"
+     width="3"
+     height="6"
+     x="111.4"
+     y="82"
+     class="room room-blue" />
+			<rect
+     id="room-t0-01"
+     width="3"
+     height="6"
+     x="108.4"
+     y="82"
+     class="room room-blue" />
+			<path
+     id="hall-m0"
+     class="hall-blue"
+     d="m 78.4,76 v 2.84 h 8.27 V 101.2 H 90 96.4 v -3 H 90 v -4 h 4.9 v -4 H 90 V 78.84 h 18.4 V 76 Z" />
+			<rect
+     id="room-m0-10b"
+     width="1.5"
+     height="4"
+     x="94.9"
+     y="90.2"
+     class="room room-blue" />
+			<rect
+     id="room-m0-10"
+     width="6.4"
+     height="4"
+     x="90"
+     y="86.2"
+     class="room room-blue" />
+			<rect
+     id="room-m0-09"
+     width="2.4"
+     height="2.4"
+     x="90"
+     y="94.2"
+     class="room room-blue" />
+			<path
+     id="room-m0-08"
+     d="m 92.4,94.2 v 2.41 H 90 v 1.59 h 2.4 4 v -4 z"
+     class="room room-blue" />
+			<rect
+     id="room-m0-07a"
+     width="2.857"
+     height="7.2"
+     x="105.5"
+     y="101.2"
+     class="room room-blue" />
+			<rect
+     id="room-m0-07"
+     width="12.34"
+     height="7.2"
+     x="93.2"
+     y="101.2"
+     class="room room-blue" />
+			<rect
+     id="room-m0-06"
+     width="3.2"
+     height="7.2"
+     x="90"
+     y="101.2"
+     class="room room-blue" />
+			<rect
+     id="room-m0-05"
+     width="11.6"
+     height="7.2"
+     x="78.4"
+     y="101.2"
+     class="room room-blue" />
+			<rect
+     id="room-m0-04"
+     width="8.268"
+     height="4.362"
+     x="78.4"
+     y="78.84"
+     class="room room-blue" />
+			<rect
+     id="room-m0-03"
+     width="6.4"
+     height="7.362"
+     x="90"
+     y="78.84"
+     class="room room-blue" />
+			<rect
+     id="room-m0-02"
+     width="6"
+     height="4.362"
+     x="96.4"
+     y="78.84"
+     class="room room-blue" />
+			<rect
+     id="room-m0-01"
+     width="6"
+     height="4.362"
+     x="102.4"
+     y="78.84"
+     class="room room-blue" />
+			<path
+     id="hall-z0"
+     d="m 56.4,58 v 18 2.84 1.23 h 0.76 v 3.13 h 1.58 v -3.13 h 16.8 V 78.84 H 78.4 V 76 H 60 v -7 h 4.9 V 65 H 60 v -7 z"
+     class="hall-yellow" />
+			<rect
+     id="room-z0-14"
+     width="6.4"
+     height="3"
+     x="60"
+     y="58"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-13b"
+     width="1.5"
+     height="4"
+     x="64.9"
+     y="65"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-13"
+     width="6.4"
+     height="4"
+     x="60"
+     y="61"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-12"
+     width="2.4"
+     height="2.4"
+     x="60"
+     y="69"
+     class="room room-yellow" />
+			<path
+     id="room-z0-11"
+     d="m 62.4,69 v 2.41 H 60 V 73 h 2.4 4 v -4 z"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-10"
+     width="6.4"
+     height="3"
+     x="60"
+     y="73"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-09"
+     width="2"
+     height="3.938"
+     x="54.4"
+     y="76.13"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-08"
+     width="2.857"
+     height="4.362"
+     x="75.54"
+     y="78.84"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-07"
+     width="6.211"
+     height="3.135"
+     x="69.33"
+     y="80.07"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-06"
+     width="4.574"
+     height="3.135"
+     x="64.76"
+     y="80.07"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-05"
+     width="2.999"
+     height="3.135"
+     x="61.76"
+     y="80.07"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-04"
+     width="3.022"
+     height="3.135"
+     x="58.74"
+     y="80.07"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-03"
+     width="2.756"
+     height="3.135"
+     x="54.4"
+     y="80.07"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-02"
+     width="6"
+     height="7.2"
+     x="48.4"
+     y="76"
+     class="room room-yellow" />
+			<rect
+     id="room-z0-01"
+     width="30"
+     height="7.2"
+     x="48.4"
+     y="50.8"
+     class="room room-yellow" />
+			<path
+     id="hall-v0-02"
+     d="m 42.4,44.8 v 6 h -9 v 3 h 9 v 2 h 3 v -2 h 3 v -3 h -3 v -6 z"
+     class="hall-yellow" />
+			<rect
+     id="hall-v0-01"
+     width="4"
+     height="8"
+     x="2.45"
+     y="50.8"
+     class="hall-yellow" />
+			<rect
+     id="room-v0-07"
+     width="6"
+     height="6"
+     x="24.4"
+     y="44.8"
+     class="room room-yellow" />
+			<rect
+     id="room-v0-06"
+     width="6"
+     height="6"
+     x="30.4"
+     y="44.8"
+     class="room room-yellow" />
+			<rect
+     id="room-v0-05"
+     width="3"
+     height="8.996"
+     x="45.4"
+     y="53.8"
+     class="room room-yellow" />
+			<rect
+     id="room-v0-04"
+     width="3"
+     height="7"
+     x="42.4"
+     y="55.8"
+     class="room room-yellow" />
+			<rect
+     id="room-v0-03"
+     width="9"
+     height="9"
+     x="33.4"
+     y="53.8"
+     class="room room-yellow" />
+			<rect
+     id="room-v0-02"
+     width="27"
+     height="12"
+     x="6.4"
+     y="50.8"
+     class="room room-yellow" />
+			<rect
+     id="room-v0-01"
+     width="4"
+     height="3"
+     x="2.4"
+     y="59.8"
+     class="room room-yellow" />
+			<rect
+     id="room-v0-01a"
+     width="4"
+     height="1"
+     x="2.4"
+     y="58.8"
+     class="room room-yellow" />
+		</g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer-walls-0"
+     inkscape:label="Steny 0"
+     inkscape:highlight-color="#ff4e4e">
+			<path
+     d="m 120.4,82 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 1.5,0 V 82"
+     class="stairs"
+     id="stairs-t0"
+     sodipodi:nodetypes="cccccccccccccccccccc" /><path
+     class="wall"
+     d="M 164.4,58 V 76"
+     id="wall-t0-posilovna" />
+			<path
+     class="wall"
+     d="M 114.4,58 V 76"
+     id="wall-t0-terasa"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 115.9,77.42 h -4.5"
+     id="wall-t0-13" />
+			<path
+     d="m 125.4,76 v 2.84 h -7 m -0.9,0 h -6.1 V 78.6 m 0,-0.9 v -0.5 m 0,-0.7 V 76"
+     class="wall"
+     id="wall-t0-12"
+     sodipodi:nodetypes="cccccccccc" />
+			<path
+     d="m 115.9,76 v 2.84"
+     class="wall"
+     id="wall-t0-11a"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="m 120.4,76 v 2.84"
+     class="wall"
+     id="wall-t0-11"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 120.4,58 h 6.1 m 1.9,0 h 4"
+     id="wall-t0-10-z"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall wall-dashed"
+     d="m 125.4,76 h -5"
+     id="wall-t0-10a" />
+			<path
+     class="wall"
+     d="m 125.4,76 h 1 m 2,0 h 4"
+     id="wall-t0-10"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 138.4,78.84 h -0.7 m -1.9,0 h -4.9 m -0.9,0 h -0.6 V 76"
+     id="wall-t0-09"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="wall"
+     d="m 135.4,76 v 2.84"
+     id="wall-t0-08"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 144.4,70 h 1.1 m 2,0 h 3.9 v 6 h 7"
+     id="wall-t0-07-z"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="wall"
+     d="m 138.4,76 v 3.6 m 0,1.6 V 88"
+     id="wall-t0-07"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 135.4,82 v 2.35 m 0,0.9 V 88"
+     class="wall"
+     id="wall-t0-06b"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 132.4,82 v 2.35 m 0,0.9 V 88"
+     class="wall"
+     id="wall-t0-06a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 129.4,82 v 6"
+     class="wall"
+     id="wall-t0-06"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="m 126.4,82 v 2.35 m 0,0.9 V 88"
+     class="wall"
+     id="wall-t0-05b"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 123.4,82 v 2.35 m 0,0.9 V 88"
+     class="wall"
+     id="wall-t0-05a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 138.4,82 h -1 m -0.9,0 h -5.1 m -0.9,0 h -2.1 m -0.9,0 h -5.1 m -0.9,0 h -1.1 v 6"
+     id="wall-t0-05"
+     sodipodi:nodetypes="ccccccccccc" />
+			<path
+     class="wall"
+     d="m 117.4,86.5 h 3"
+     id="wall-t0-04a"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="m 117.4,88 v -6 h -0.3 m -0.9,0 h -0.6 m -0.9,0 h -1.8 m -0.9,0 h -1.8 m -0.9,0 h -0.9"
+     class="wall"
+     id="wall-t0-04"
+     sodipodi:nodetypes="ccccccccccc" />
+			<path
+     class="wall"
+     d="m 114.4,83.8 h 1.5 V 82"
+     id="wall-t0-03"
+     sodipodi:nodetypes="ccc" />
+			<path
+     d="m 114.4,82 v 6"
+     class="wall"
+     id="wall-t0-02"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 111.4,82 v 6"
+     id="wall-t0-01"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 108.4,69.8 h 0.5 m 2,0 h 0.5"
+     id="wall-t0-z"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 108.9,70 v -0.2 -0.2 m 2,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-t0-z"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 111.2,76.5 h 0.2 0.2 m -0.4,0.7 h 0.2 0.2"
+     class="door"
+     id="door-t0-13"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 111.2,77.7 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-t0-12"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 117.5,79.04 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-t0-11"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 126.5,58.2 V 58 57.8 m 1.9,0.4 V 58 57.8"
+     class="door"
+     id="door-t0-10-z"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 126.4,76.2 V 76 75.8 m 2,0.4 V 76 75.8"
+     class="door"
+     id="door-t0-10"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 130,79.04 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-t0-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 135.8,79.04 v -0.2 -0.2 m 1.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-t0-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 145.5,70 h 2"
+     id="door-t0-07a-z-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc"
+     transform="scale(1)" /><path
+     d="M 145.5,70.2 V 70 69.8 m 2,0.4 V 70 69.8"
+     class="door"
+     id="door-t0-07a-z"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 138.2,79.6 h 0.2 0.2 m -0.4,1.6 h 0.2 0.2"
+     class="door"
+     id="door-t0-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 135.2,84.35 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-t0-06cII"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 132.2,84.35 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-t0-06cI"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 136.5,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-06b"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 130.5,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-06a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 126.2,84.35 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-t0-05cII"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 123.2,84.35 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-t0-05cI"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 127.5,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-05b"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 121.5,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-05a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 116.2,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 114.7,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 112,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 109.3,82.2 V 82 81.8 m 0.9,0.4 V 82 81.8"
+     class="door"
+     id="door-t0-01"
+     sodipodi:nodetypes="cccccc" />
+			
+			<path
+     class="stairs"
+     d="m 90,90.2 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0,-2 H 90"
+     id="stairs-m0"
+     sodipodi:nodetypes="cccccccccccccccccccc" /><path
+     class="wall"
+     d="m 108.4,83.2 v -4.9 m 0,-1.6 V 76"
+     id="wall-m0-t0"
+     sodipodi:nodetypes="cccc" />
+			<path
+     id="wall-m0-wc"
+     class="wall"
+     d="M 96.4,98.2 H 90 v -0.34 m 0,-0.9 v -0.7 m 0,-0.9 v -1.34 m 0,-3.64 v -3.01 m 0,-0.9 V 85.3 m 0,-1.6 v -4.86"
+     inkscape:label="wall-m0-wc" />
+			<path
+     class="wall"
+     d="m 94.9,90.2 v 4"
+     id="wall-m0-10b"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall wall-thick"
+     d="m 90,90.2 h 6.4"
+     id="wall-m0-10"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 92.4,94.2 v 2.4 H 90"
+     id="wall-m0-09"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="wall wall-thick"
+     d="m 90,94.2 h 6.4"
+     id="wall-m0-08"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 105.5,101.2 v 1 m 0,0.8 v 5.4"
+     id="wall-m0-07a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 93.2,108.4 v -7.2"
+     id="wall-m0-07"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 86.4,101.2 h 1.06 m 1.9,0 h 1.79 m 0.9,0 h 1.69 m 1.9,0 h 0.76"
+     id="wall-m0-06"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="wall"
+     d="m 90,108.4 v -7.2"
+     id="wall-m0-05"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="M 86.67,83.2 V 78.84"
+     id="wall-m0-04"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 90,86.2 h 6.4"
+     id="wall-m0-03"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="M 96.4,83.2 V 78.84"
+     id="wall-m0-02" />
+			<path
+     class="wall"
+     d="M 102.4,83.2 V 78.84"
+     id="wall-m0-01"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 78.4,78.84 h 2.71 m 0.9,0 h 3.34 m 0.9,0 h 1.13 m 1.9,0 h 10.07 m 0.95,0 h 5.2 m 0.9,0 h 2"
+     id="wall-m0"
+     sodipodi:nodetypes="cccccccccccc" />
+			<path
+     d="m 108.2,76.7 h 0.2 0.2 m -0.4,1.6 h 0.2 0.2"
+     class="door"
+     id="door-m0-t0"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,86.47 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m0-10"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,95.36 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m0-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,96.96 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-m0-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 105.3,102.2 h 0.2 0.2 m -0.4,0.8 h 0.2 0.2"
+     id="door-m0-07a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 93.74,101.4 v -0.2 -0.2 m 1.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 91.15,101.4 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 87.46,101.4 v -0.2 -0.2 m 1.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-05"
+     sodipodi:nodetypes="cccccc" /><path
+     d="m 85.35,78.84 h 0.9"
+     id="door-m0-04a-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="m 85.35,79.04 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-04a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 81.11,79.04 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 89.8,83.7 h 0.2 0.2 m -0.4,1.6 h 0.2 0.2"
+     id="door-m0-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 99.35,79.04 v -0.2 -0.2 m 0.95,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 105.5,79.04 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-01"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 87.38,79.04 v -0.2 -0.2 m 1.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-m0-hall"
+     sodipodi:nodetypes="cccccc" />
+			
+			<path
+     class="stairs"
+     d="m 60,65 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 M 62,65 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0.4,-4 v 4 m 0,-2 H 60"
+     id="stairs-z0"
+     sodipodi:nodetypes="cccccccccccccccccccc" /><path
+     class="wall"
+     d="m 78.4,83.2 v -4.8 m 0,-1.6 V 76"
+     id="wall-z0-m0"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="M 66.4,76 H 60 v -1.23 m 0,-0.9 v -1.21 m 0,-0.9 v -0.7 m 0,-0.9 v -1.34 m 0,-3.64 v -3.01 m 0,-0.9 V 60.1 m 0,-1.6 V 58 h 6.4"
+     id="wall-z0-wc"
+     sodipodi:nodetypes="cccccccccccccccc" />
+			<path
+     class="wall"
+     d="m 60,61 h 6.4"
+     id="wall-z0-14"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 64.9,65 v 4"
+     id="wall-z0-13b"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall wall-thick"
+     d="m 60,65 h 6.4"
+     id="wall-z0-13"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 62.4,69 v 2.4 H 60"
+     id="wall-z0-12"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="wall wall-thick"
+     d="m 60,69 h 6.4"
+     id="wall-z0-11"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 60,73 h 6.4"
+     id="wall-z0-10"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 54.4,80.07 h 0.49 m 0.9,0 h 1.71 m 0.9,0 h 4.63 m 0.9,0 h 1.68 m 0.9,0 h 5.54 m 0.9,0 h 2.59 v -0.22 m 0,-0.8 v -0.21"
+     id="wall-z0-09b"
+     sodipodi:nodetypes="ccccccccccccccc" />
+			<path
+     class="wall"
+     d="m 78.4,78.84 h -9.92 m -0.9,0 h -8.72 m -0.9,0 H 56.4 V 76"
+     id="wall-z0-09a"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="wall"
+     d="M 75.54,80.07 V 83.2"
+     id="wall-z0-08" />
+			<path
+     class="wall"
+     d="M 69.33,80.07 V 83.2"
+     id="wall-z0-07" />
+			<path
+     class="wall"
+     d="M 64.76,80.07 V 83.2"
+     id="wall-z0-06" />
+			<path
+     class="wall"
+     d="M 61.76,80.07 V 83.2"
+     id="wall-z0-05" />
+			<path
+     class="wall"
+     d="m 58.74,80.07 v 1.08 m 0,0.9 v 1.15"
+     id="wall-z0-04"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 57.16,80.07 v 1.08 m 0,0.9 v 1.15"
+     id="wall-z0-03"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 54.4,76 v 2.14 m 0,0.9 v 4.16"
+     id="wall-z0-02"
+     sodipodi:nodetypes="cccc" />
+			<path
+     d="m 78.2,76.8 h 0.2 0.2 m -0.4,1.6 h 0.2 0.2"
+     class="door"
+     id="door-z0-m0"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 57.5,80.26 v -0.19 -0.21 m 0.9,0.4 v -0.19 -0.21"
+     id="door-z0-out"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,58.5 h 0.2 0.2 m -0.4,1.6 h 0.2 0.2"
+     id="door-z0-14"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,61.27 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z0-13"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,70.16 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z0-12"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,71.76 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z0-11"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 59.8,73.87 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z0-10"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 67.58,79.04 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     id="door-z0-09-II"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 57.96,79.04 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     id="door-z0-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 75.34,79.05 h 0.2 0.2 m -0.4,0.8 h 0.2 0.2"
+     id="door-z0-08"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 72.05,80.26 v -0.19 -0.21 m 0.9,0.4 v -0.19 -0.21"
+     id="door-z0-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 65.61,80.26 v -0.19 -0.21 m 0.9,0.4 v -0.19 -0.21"
+     id="door-z0-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 63.03,80.26 v -0.19 -0.21 m 0.9,0.4 v -0.19 -0.21"
+     id="door-z0-05"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 58.54,81.15 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z0-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 54.89,80.07 h 0.9"
+     id="door-z0-03a-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc" /><path
+     class="door"
+     d="m 54.89,80.26 v -0.19 -0.21 m 0.9,0.4 v -0.19 -0.21"
+     id="door-z0-03a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 56.96,81.15 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z0-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="door"
+     d="m 54.2,78.14 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     id="door-z0-02"
+     sodipodi:nodetypes="cccccc" />
+			
+			<path
+     d="m 6.4,53.8 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 3,0.4 h -3 m 1.5,0.4 v -3.6 m 1.5,3.6 h -3"
+     class="stairs"
+     id="stairs-v0"
+     sodipodi:nodetypes="cccccccccccccccccccccc" /><path
+     class="wall"
+     d="m 48.4,32.8 v 18.95 m 0,1.6 v 5.18"
+     id="wall-v0-z0"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 42.4,44.8 h 0.55 m 1.9,0 h 0.55"
+     id="wall-v0-z"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="M 12.4,50.8 H 4.85 m -0.9,0 H 2.4"
+     id="wall-v0-09"
+     sodipodi:nodetypes="cccc" />
+			<path
+     id="wall-v0-08"
+     class="wall"
+     d="m 2.4,58.8 c 1.333,0 2.667,0 4,0 m -3,-5.1 v 5.1" />
+			<path
+     class="wall"
+     d="m 30.4,50.8 v -6"
+     id="wall-v0-07" />
+			<path
+     class="wall"
+     d="m 24.4,44.8 h 12"
+     id="wall-v0-06-z"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="wall"
+     d="m 24.4,50.8 h 2.65 m 0.9,0 h 5 m 0.9,0 h 2.55"
+     id="wall-v0-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="wall"
+     d="m 48.4,53.8 h -3 v 0.3 m 0,1.4 v 7.3"
+     id="wall-v0-05"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="wall"
+     d="m 42.4,55.8 h 0.85 m 0.9,0 h 1.25"
+     id="wall-v0-04"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall"
+     d="m 42.4,62.8 v -9 h -2.05 m -1.9,0 H 33.4 v 7.05 m 0,0.9 v 1.05"
+     id="wall-v0-03"
+     sodipodi:nodetypes="cccccccc" />
+			<path
+     class="wall wall-thin"
+     d="m 6.4,53.8 v -0.55 m 0,-1.9 V 50.8"
+     id="wall-v0-02a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     id="wall-v0-02"
+     class="wall"
+     d="m 6.4,62.8 v -0.75 m 0,-1.9 V 53.7"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall wall-thin"
+     d="M 6.4,59.8 H 4.2 m -0.7,0 H 2.4"
+     id="wall-v0-01a"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="wall wall-glass"
+     d="m 2.4,60.15 v -6.9"
+     id="wall-v0-01-glass" />
+			<path
+     id="wall-v0-01"
+     class="wall"
+     d="m 2.4,62.8 v -0.75 m 0,-10.7 V 47.8 h -2" />
+			<path
+     class="door"
+     d="m 48.2,51.75 h 0.2 0.2 m -0.4,1.6 h 0.2 0.2"
+     id="door-v0-z0"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 42.95,45 v -0.2 -0.2 m 1.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-v0-z"
+     sodipodi:nodetypes="cccccc" /><path
+     d="m 3.95,50.8 h 0.9"
+     id="door-v0-09-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="M 3.95,51 V 50.8 50.6 M 4.85,51 V 50.8 50.6"
+     class="door"
+     id="door-v0-09"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 27.05,51 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-v0-07"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 32.95,51 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-v0-06"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 45.2,54.1 h 0.2 0.2 m -0.4,1.4 h 0.2 0.2"
+     class="door"
+     id="door-v0-05"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 43.25,56 v -0.2 -0.2 m 0.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-v0-04"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 33.2,60.85 h 0.2 0.2 m -0.4,0.9 h 0.2 0.2"
+     class="door"
+     id="door-v0-03a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 38.45,54 v -0.2 -0.2 m 1.9,0.4 v -0.2 -0.2"
+     class="door"
+     id="door-v0-03"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 6.2,51.35 h 0.2 0.2 m -0.4,1.9 h 0.2 0.2"
+     class="door"
+     id="door-v0-02a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 6.2,60.15 h 0.2 0.2 m -0.4,1.9 h 0.2 0.2"
+     class="door"
+     id="door-v0-02"
+     sodipodi:nodetypes="cccccc" /><path
+     d="m 2.4,51.35 v 1.9"
+     id="door-v0-01b-closed"
+     class="door-closed"
+     sodipodi:nodetypes="cc" />
+			<path
+     d="m 2.2,51.35 h 0.2 0.2 m -0.4,1.9 h 0.2 0.2"
+     class="door"
+     id="door-v0-01b"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="M 3.5,59.8 H 4.2"
+     id="door-v0-01a-closed"
+     class="door-closed" />
+			<path
+     d="m 3.5,59.9 v -0.1 -0.1 m 0.7,0.2 v -0.1 -0.1"
+     class="door"
+     id="door-v0-01a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     d="m 2.2,60.15 h 0.2 0.2 m -0.4,1.9 h 0.2 0.2"
+     class="door"
+     id="door-v0-01"
+     sodipodi:nodetypes="cccccc" />
+			
+		</g>
+		<g
+     inkscape:label="Obrys 0"
+     inkscape:groupmode="layer"
+     id="layer-outline-0"
+     inkscape:highlight-color="#f3cf21">
+			<path
+     id="obrys-zm0"
+     d="m 86.4,32.8 v 0 h -8 v -7.2 h 30 v 7.2 h -12 v 18 h 12 V 58 h -30 v -7.2 h 8 v -18"
+     class="outline" />
+			<path
+     id="obrys-zz0"
+     d="m 56.4,7.6 v 0 h -8 V 0.4 h 30 v 7.2 h -12 v 18 h 12 v 7.2 h -30 v -7.2 h 8 v -18"
+     class="outline"
+     sodipodi:nodetypes="cccccccccccccc" />
+			<path
+     id="obrys-t0"
+     d="m 108.4,76 c 0,-11.13 0,-20.94 0,-30 h 56 v 12 h -6 v 18 h 6 v 12 h -56 c 0,-3.46 0,-1.24 0,-4.8 m 36,-7.2 V 58 h -12 v 18 z m -24,0 V 58 h -9 v 18 z"
+     sodipodi:nodetypes="cccccccccccccccccccc"
+     class="outline" />
+			<path
+     id="obrys-z0"
+     d="m 56.4,58 v 0 h -8 m 0,-7.2 h 30 V 58 h -12 v 18 h 12 m 0,7.2 h -30 V 76 h 8 V 58"
+     class="outline"
+     sodipodi:nodetypes="cccccccccccccc" />
+			<path
+     id="obrys-m0"
+     d="m 86.4,83.2 v 0 h -8 m 0,-7.2 h 30 m 0,7.2 h -12 v 18 h 12 v 7.2 h -30 v -7.2 h 8 v -18"
+     class="outline"
+     sodipodi:nodetypes="cccccccccccccc" />
+			<path
+     d="m 2.4,62.8 h -2 v -15"
+     id="obrys-v0-sub"
+     sodipodi:nodetypes="ccc"
+     class="outline outline-dashed" />
+			<path
+     id="obrys-v0"
+     d="m 12.4,50.8 v -18 h 12 v 18 z m 30,0 h -6 v -18 h 6 z m -42,-3 v -27 h 48 v 12 h -3 v 18 h 3 m 0,7.2 v 4.8 h -46"
+     class="outline"
+     sodipodi:nodetypes="cccccccccccccccccccc" />
+		<text
+     xml:space="preserve"
+     class="floor-title"
+     x="4"
+     y="83"
+     id="text2">Přízemí</text>
+	 </g>
+		<g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Navigace 0"
+     inkscape:highlight-color="#1e53ff">
+			<path
+     class="nav nav-arrow"
+     d="m 119.6,82.4 v 3.4 h -1.4 v -5.3 h -8.4 v -2.9 h -1.4"
+     id="nav-t0-t1"
+     sodipodi:nodetypes="ccccccc" />
+			<path
+     class="nav"
+     d="m 111.4,76.85 h -1.6 v 0.75 h -1.4"
+     id="nav-t0-13"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="m 111.4,78.15 h -1.6 V 77.6 h -1.4"
+     id="nav-t0-12"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="m 118,78.84 v 1.66 h -8.2 v -2.9 h -1.4"
+     id="nav-t0-11"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 127.4,76 v 4.5 h -17.6 v -2.9 h -1.4"
+     id="nav-t0-10"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 130.5,78.84 v 1.66 h -20.7 v -2.9 h -1.4"
+     id="nav-t0-09"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 136.8,78.84 v 1.66 h -27 v -2.9 h -1.4"
+     id="nav-t0-08"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 138.4,80.5 h -28.6 v -2.9 h -1.4"
+     id="nav-t0-07"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="m 137,82 v -1.5 h -27.2 v -2.9 h -1.4"
+     id="nav-t0-06b"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 131,82 v -1.5 h -21.2 v -2.9 h -1.4"
+     id="nav-t0-06a"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 127.9,82 v -1.5 h -18.1 v -2.9 h -1.4"
+     id="nav-t0-05b"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 121.9,82 v -1.5 h -12.1 v -2.9 h -1.4"
+     id="nav-t0-05a"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 116.7,82 v -1.5 h -6.9 v -2.9 h -1.4"
+     id="nav-t0-04"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 115.2,82 v -1.5 h -5.4 v -2.9 h -1.4"
+     id="nav-t0-03"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 112.5,82 v -1.5 h -2.7 v -2.9 h -1.4"
+     id="nav-t0-02"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 109.8,82 v -4.4 h -1.4"
+     id="nav-t0-01"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="nav"
+     d="m 108.4,77.6 h -30"
+     id="nav-m0-t0"
+     sodipodi:nodetypes="cc" />
+			<path
+     class="nav nav-arrow"
+     d="M 90.4,93.1 H 94 V 91.2 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-m1"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 90,86.9 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-10"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 90,95.8 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-09"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 90,97.4 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-08"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 105.5,102.6 H 94.7 V 99.7 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-07a"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 94.7,101.2 V 99.7 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-07"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 91.6,101.2 V 99.7 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-06"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 88.33,101.2 V 77.6 H 78.4"
+     id="nav-m0-05"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="nav"
+     d="M 81.6,78.9 V 77.6 H 78.4"
+     id="nav-m0-04"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="nav"
+     d="M 90,84.5 H 88.33 V 77.6 H 78.4"
+     id="nav-m0-03"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 99.85,78.85 V 77.6 H 78.4"
+     id="nav-m0-02"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="nav"
+     d="M 105.9,78.85 V 77.6 H 78.4"
+     id="nav-m0-01"
+     sodipodi:nodetypes="ccc" />
+			<path
+     class="nav"
+     d="M 78.4,77.6 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-m0"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav nav-arrow"
+     d="M 60.4,68 H 64 V 66.1 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-z1"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="m 60,59.3 h -1.67 v -7 H 48.4"
+     id="nav-z0-14"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 60,61.72 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-13"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 60,70.6 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-12"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 60,72.2 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-11"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="m 60,74.3 h -1.67 v -22 H 48.4"
+     id="nav-z0-10"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 75.54,79.5 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-08"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 72.5,80 V 79.5 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-07"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 66.1,80 V 79.5 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-06"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 63.48,80 V 79.5 H 58.33 V 52.3 H 48.4"
+     id="nav-z0-05"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 54.4,78.55 h 1.1 v 0.95 h 2.83 V 52.3 H 48.4"
+     id="nav-z0-02"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 4.2,52.3 H 18 v 8.8 H 4.41"
+     id="nav-v0-v2"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="M 48.4,52.3 H 18 v 8.8 H 4.41"
+     id="nav-v0-z0"
+     sodipodi:nodetypes="cccc" />
+			<path
+     class="nav"
+     d="m 27.5,50.8 v 1.5 H 18 v 8.8 H 4.4"
+     id="nav-v0-07"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="m 33.4,50.8 v 1.5 H 18 v 8.8 H 4.4"
+     id="nav-v0-06"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 45.4,54.8 H 43.7 V 52.3 H 18 v 8.8 H 4.4"
+     id="nav-v0-05"
+     sodipodi:nodetypes="cccccc" />
+			<path
+     class="nav"
+     d="M 43.7,55.8 V 52.3 H 18 v 8.8 H 4.4"
+     id="nav-v0-04"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 39.4,53.8 V 52.3 H 18 v 8.8 H 4.4"
+     id="nav-v0-03"
+     sodipodi:nodetypes="ccccc" />
+			<path
+     class="nav"
+     d="M 18,61.1 H 4.41"
+     id="nav-v0-02"
+     sodipodi:nodetypes="cc" />
+		<path
+     class="nav-arrow"
+     style="display:inline;fill:none;stroke:red;stroke-width:0.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-linejoin:round;stroke-linecap:round"
+     d="M -0.2873,61.05 H -5.85"
+     id="path2" /><text
+     xml:space="preserve"
+     style="font-size:2.2px;fill:red;stroke:red;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;user-select:none"
+     x="-6.2"
+     y="59"
+     id="text1">Vstup</text></g>
+	</g>
+</svg>

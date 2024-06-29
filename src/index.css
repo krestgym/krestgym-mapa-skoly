@@ -1,13 +1,422 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	box-sizing: border-box;
+	overscroll-behavior: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	font-family: 'Prompt', sans-serif;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	touch-action: none;
+	background-color: white;
+}
+
+body, .plan, #root, .plan svg {
+	width: 100%;
+	height: 100%;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+	outline: 3px dotted black;
+	outline-offset: 2px;
+	z-index: 2;
+}
+
+.button {
+	background: var(--button-background);
+	border: 2px solid var(--button-border);
+	border-radius: 5px;
+	padding: 6px 15px;
+	color: var(--button-text);
+	transition: all 0.1s;
+	font-family: inherit;
+	user-select: none;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button:active {
+	transform: scale(0.97);
+}
+
+.button-primary {
+	--button-background: #065c8e;
+	--button-border: #086ea876;
+	--button-text: white;
+}
+
+.button-primary:hover {
+	--button-background: #04446a;
+}
+
+.button-primary:active, .button-secondary:active {
+	--button-background: #033451;
+}
+
+.button-secondary {
+	--button-background: none;
+	--button-border: #065c8e;
+	--button-text: #065c8e;
+}
+
+.button-secondary:hover {
+	--button-background: #04446a;
+	--button-border: #04446a;
+	--button-text: white;
+}
+
+.checkbox {
+	--checkbox-color: #065c8e;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	margin: -2px 4px 0 3px;
+	border-radius: 5px;
+	border: 2px solid var(--checkbox-color);
+	display: inline;
+	vertical-align: middle;
+}
+
+.checkbox:checked {
+	background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e") var(--checkbox-color);
+}
+
+.checkbox:hover, .checkbox:focus-visible {
+	--checkbox-color: #04446a;
+	cursor: pointer;
+}
+
+.room-info-modal[open] {
+	background-color: white;
+	color: black;
+	border: 1px solid #bbb;
+	border-radius: 10px;
+	width: 250px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.room-info-modal::backdrop {
+	background-color: #0003;
+}
+
+.plan {
+	border: 5px solid #04446a;
+}
+
+.plan svg:focus{
+	outline: none;
+}
+
+.plan svg:focus-visible{
+	outline: 3px dotted white;
+	outline-offset: 2px;
+}
+
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+	position: fixed;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: #000a;
+	color: white;
+	z-index: 990;
+}
+
+.control-overlay {
+	position: fixed;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background: none;
+	/* pointer-events: none; */
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+}
+
+.controls {
+	position: fixed;
+	margin: 20px;
+	padding: 10px;
+	background: #ddd;
+	color: black;
+	border-radius: 10px;
+	transition: transform 0.3s ease-out;
+	z-index: 2;
+	user-select: none;
+	display: flex;
+	flex-direction: column;
+	/* align-items: flex-start; */
+}
+
+.controls.right {
+	top: 0;
+	right: 0;
+}
+
+.controls.left {
+	top: 0;
+	left: 0;
+}
+
+.controls.right.hidden {
+	transform: translateX(120%);
+}
+
+.controls.left.hidden {
+	transform: translateX(-120%);
+}
+
+.control-opener {
+	position: fixed;
+	transition: transform 0.2s ease-out 0s;
+	width: 35px;
+	height: 35px;
+	padding: 5px;
+	background: #0003;
+	border: 2px solid #0004;
+	border-radius: 5px;
+	cursor: pointer;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.control-opener.right {
+	top: 20px;
+	right: 10px;
+}
+
+.control-opener.left {
+	top: 20px;
+	left: 10px;
+}
+
+.control-opener.right.hidden {
+	transform: translateX(150%);
+}
+
+.control-opener.left.hidden {
+	transform: translateX(-150%);
+}
+
+.control-opener.shown {
+	transition-delay: 0.5s;
+}
+
+.control-close-button {
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
+	width: 25px;
+	height: 25px;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	align-self: flex-end;
+}
+
+.control-close-button.left {
+	align-self: flex-start;
+}
+
+.floor-controls {
+	flex-direction: row;
+}
+
+.floor-controls div {
+	display: flex;
+	flex-direction: column;
+}
+
+.floor-controls .button {
+	font-size: 15px;
+	width: 100px;
+	height: 40px;
+	margin: 0;
+	border-radius: 0;
+}
+
+.floor-controls .button:not(:last-child){
+	border-bottom: none;
+}
+
+.floor-controls .button:first-child {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.floor-controls .button:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.floor-controls .button:hover {
+	--button-background: #065c8e;
+	--button-border: #065c8e;
+}
+
+.floor-controls .button:active {
+	transform: none;
+}
+
+.floor-controls button.floor-selected {
+	--button-background: #04446a;
+	--button-border: #04446a;
+	--button-text: white;
+}
+
+.floor-controls button.floor-highlight:not(.floor-selected) {
+	--button-background: #ff7878;
+	animation: pulse-outline 1s infinite;
+	z-index: 2;
+}
+
+.search-controls.left {
+	width: 300px;
+	top: 150px;
+	gap: 10px;
+	max-width: 85%;
+}
+
+@media(min-width: 768px){
+	.search-controls.left{
+		top: 0;
+		left: 170px;
+	}
+
+	.search-controls.left.hidden {
+		transform: translateX(-170%);
+	}
+}
+
+.search-controls .buttons {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.map-controls.right {
+	bottom: 0;
+	top: auto;
+	margin: 5px;
+	background: none;
+	gap: 3px;
+}
+
+.map-controls .map-control {
+	transition: transform 0.2s ease-out 0s;
+	transition: background-color 0.1s;
+	width: 35px;
+	height: 35px;
+	padding: 5px;
+	background: #bbbb;
+	border: 2px solid #0004;
+	border-radius: 5px;
+	cursor: pointer;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.map-controls .map-control:hover {
+	background-color: #0005;
+}
+
+svg .navigated {
+	fill: red;
+	stroke: #f008;
+	stroke-width: 10px;
+	animation: pulse-stroke 1s infinite;
+}
+
+svg .nav {
+	--dashoffset-end: 0.9;
+	animation: move 1s infinite linear;
+}
+
+.floor-indicator {
+	height: 120px;
+	width: 40px;
+}
+
+.floor-indicator path {
+	stroke: red;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 0.6;
+	fill: none;
+	display: inline;
+}
+
+.floor-indicator path.nav {
+	--dashoffset-end: 1.5;
+	stroke-dasharray: 0.5,1;
+	animation-direction: reverse;
+}
+
+@keyframes pulse-stroke {
+	from {
+		stroke-width: 0px;
+		stroke: #f00a;
+	}
+
+	to {
+		stroke-width: 15px;
+		stroke: transparent;
+	}
+}
+
+@keyframes pulse-outline {
+	from {
+		/* outline: #f00a solid 0px; */
+		box-shadow: 0 0 0 0px #f00a;
+	}
+
+	to {
+		/* outline: transparent solid 10px; */
+		box-shadow: 0 0 0 10px transparent;
+	}
+}
+
+@keyframes move {
+	from {
+		stroke-dashoffset: 0;
+	}
+
+	to {
+		stroke-dashoffset: var(--dashoffset-end);
+	}
+}
+
+
+@media(prefers-color-scheme: dark) {
+	body {
+		background-color: #222;
+	}
+
+	.control-opener {
+		background: #fffc;
+	}
+
+	.map-controls .map-control:hover {
+		background-color: #fffa;
+	}
 }

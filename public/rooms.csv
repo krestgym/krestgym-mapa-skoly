@@ -1,0 +1,106 @@
+ID,Číslo místnosti,Název místnosti,Další informace k místnosti,Zobrazit číslo místnosti,Zobrazit název místnosti,Posun textu vodorovně,Posun textu svisle,Velikost fontu,Navigace
+room-v0-01,V0.01,Vstupní hala,,ano,ano,,,,
+room-v0-01a,V0.01a,Vrátnice,,ano,ne,,,0.5,
+room-v0-02,V0.02,Šatny,,ano,ano,,,,nav-v0-02
+room-v0-03,V0.03,Sborovna,,ano,ano,,,,nav-v0-03
+room-v0-04,V0.04,J5,,ano,ano,,,,nav-v0-04
+room-v0-05,V0.05,Technické prostory,,ano,ne,,,,nav-v0-05
+room-v0-06,V0.06,Studovna,,ano,ano,,,,nav-v0-06
+room-v0-07,V0.07,Klubovna,,ano,ano,,,,nav-v0-07
+room-v0-08,V0.08,Hroudův sklad :),,ne,ne,,,,
+room-z0-01,Z0.01,Školní klub,,ano,ano,,,,nav-v0-z0
+room-z0-02,Z0.02,Ředitelna,,ano,ano,,,,nav-v0-z0 nav-z0-02
+room-z0-03,Z0.03,Firemní prostory,,ano,ne,,,0.5,nav-v0-z0 nav-z0-02
+room-z0-04,Z0.04,Firemní prostory,,ano,ne,,,0.5,nav-v0-z0 nav-z0-02
+room-z0-05,Z0.05,Zástupce ředitele,,ano,ano,,,,nav-v0-z0 nav-z0-05
+room-z0-06,Z0.06,Zástupce ředitele,,ano,ano,,,,nav-v0-z0 nav-z0-06
+room-z0-07,Z0.07,Hospodář,,ano,ano,,,0.5,nav-v0-z0 nav-z0-07
+room-z0-08,Z0.08,Ekonom,,ano,ano,,,0.5,nav-v0-z0 nav-z0-08
+room-z0-09,Z0.09,Kuchyňka,,ano,ano,,,,nav-v0-z0 nav-z0-02
+room-z0-10,Z0.10,J4,,ano,ano,,,,nav-v0-z0 nav-z0-10
+room-z0-11,Z0.11,WC ženy,,ano,ano,1.1,,0.75,nav-v0-z0 nav-z0-11
+room-z0-12,Z0.12,WC učitelé,,ano,ano,,,,nav-v0-z0 nav-z0-12
+room-z0-13,Z0.13,WC muži,,ano,ano,,,,nav-v0-z0 nav-z0-13
+room-z0-13b,Z0.13b,Technické prostory,,ne,ne,,,,nav-v0-z0 nav-z0-13
+room-z0-14,Z0.14,Dílna,,ano,ano,,,,nav-v0-z0 nav-z0-14
+room-z1-01,Z1.01,Chemie,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-01
+room-z1-02,Z1.02,Kabinet,Marešová,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-02
+room-z1-03,Z1.03,Kabinet,Jurmanová,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-03
+room-z1-04,Z1.04,Chemická laboratoř,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-04
+room-z1-05,Z1.05,Fyzika,,ano,ano,-1,,,nav-v0-z0 nav-z0-z1 nav-z1-05
+room-z1-06,Z1.06,Kabinet,Böhm<br>Přádná<br>Maráková<br>Mikuláštík<br>Korec,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-06
+room-z1-07,Z1.07,Zeměpis,,ano,ano,1,,,nav-v0-z0 nav-z0-z1 nav-z1-07
+room-z1-07a,Z1.07a,Kabinet,Pumr,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-07a
+room-z1-08,Z1.08,WC ženy,,ano,ano,1.1,,0.75,nav-v0-z0 nav-z0-z1 nav-z1-08
+room-z1-09,Z1.09,Úklidová komora,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-09
+room-z1-10,Z1.10,WC muži,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-10
+room-z1-10b,Z1.10b,Technické prostory,,ne,ne,,,,nav-v0-z0 nav-z0-z1 nav-z1-10
+room-z1-11,Z1.11,Sklad chemikálií,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-11
+room-z2-01,Z2.01,Biologie,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-01
+room-z2-02,Z2.02,Kabinet,Rieggerová,ano,ano,,-0.7,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-02
+room-z2-02a,Z2.02a,Sklad,,ano,ano,,,0.5,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-02
+room-z2-03,Z2.03,Kabinet,Šmídová,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-03
+room-z2-04,Z2.04,3.B,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-04
+room-z2-05,Z2.05,7.A,,ano,ano,-1,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-05
+room-z2-06,Z2.06,Oratoř,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-06
+room-z2-07,Z2.07,7.B,,ano,ano,1,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-07
+room-z2-07a,Z2.07a,Sklad,,ano,ano,,,0.75,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-07a
+room-z2-08,Z2.08,WC ženy,,ano,ano,1.1,,0.75,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-08
+room-z2-09,Z2.09,Úklidová komora,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-09
+room-z2-10,Z2.10,WC muži,,ano,ano,,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-10
+room-z2-10b,Z2.10b,Technické prostory,,ne,ne,,,,nav-v0-z0 nav-z0-z1 nav-z1-z2 nav-z2-10
+room-m0-01,M0.01,Kabinet,Řezníčková,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-01
+room-m0-02,M0.02,Kabinet,Ulrychová,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-02
+room-m0-03,M0.03,Knihovna,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-03
+room-m0-04,M0.04,J1,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-04
+room-m0-05,M0.05,4.A,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-05
+room-m0-06,M0.06,Kabinet,Kroupová,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-06
+room-m0-07,M0.07,8.B,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-07
+room-m0-07a,M0.07a,Kabinet,Duchečková,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-07a
+room-m0-08,M0.08,WC ženy,,ano,ano,1.1,,0.75,nav-v0-z0 nav-z0-m0 nav-m0-08
+room-m0-09,M0.09,Úklidová komora,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-09
+room-m0-10,M0.10,WC muži,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-10
+room-m0-10b,M0.10b,Technické prostory,,ne,ne,,,,nav-v0-z0 nav-z0-m0 nav-m0-10
+room-m1-01,M1.01,3.A,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-01
+room-m1-02,M1.02,Výtvarná výchova,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-02
+room-m1-03,M1.03,1.A,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-03
+room-m1-04,M1.04,1.B,,ano,ano,-1,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-04
+room-m1-05,M1.05,Počítačová učebna,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-05
+room-m1-06,M1.06,5.A,,ano,ano,1,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-06
+room-m1-06a,M1.06a,Kabinet,Očenášek,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-06a
+room-m1-07,M1.07,WC ženy,,ano,ano,1.1,,0.75,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-07
+room-m1-08,M1.08,Úklidová komora,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-08
+room-m1-09,M1.09,WC muži,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-09
+room-m1-09b,M1.09b,Technické prostory,,ne,ne,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-09
+room-m2-01,M2.01,6.A,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-01
+room-m2-01a,M2.01a,Kabinet,Ryantová,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-01a
+room-m2-02,M2.02,J3,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-02
+room-m2-03,M2.03,8.A,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-03
+room-m2-04,M2.04,6.B,,ano,ano,-1,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-04
+room-m2-05,M2.05,J2,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-05
+room-m2-06,M2.06,2.A,,ano,ano,1,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-06
+room-m2-06a,M2.06a,Kabinet,Adamová,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-06a
+room-m2-07,M2.07,WC ženy,,ano,ano,1.1,,0.75,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-07
+room-m2-08,M2.08,Úklidová komora,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-08
+room-m2-09,M2.09,WC muži,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-09
+room-m2-09b,M2.09b,Technické prostory,,ne,ne,,,,nav-v0-z0 nav-z0-m0 nav-m0-m1 nav-m1-m2 nav-m2-09
+room-t0-01,T0.01,Vstupní hala,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-01
+room-t0-02,T0.02,Kabinet,Synovcová,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-02
+room-t0-03,T0.03,WC muži,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-03
+room-t0-04,T0.04,WC ženy,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-04
+room-t0-04a,T0.04a,Úklidová komora,,ne,ne,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-04
+room-t0-05a,T0.05a,Šatna,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-05a
+room-t0-05b,T0.05b,Šatna,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-05b
+room-t0-05c,T0.05c,Sprchy,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-05a
+room-t0-06a,T0.06a,Šatna,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-06a
+room-t0-06b,T0.06b,Šatna,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-06b
+room-t0-06c,T0.06c,Sprchy,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-06a
+room-t0-07,T0.07,Tělocvična velká,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-07
+room-t0-07a,T0.07a,Sklad náčiní,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-07
+room-t0-08,T0.08,Sklad náčiní,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-08
+room-t0-09,T0.09,Kabinet,Reumann,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-09
+room-t0-10,T0.10,Tělocvična malá,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-10
+room-t0-10a,T0.10a,Sklad náčiní,,ano,ano,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-10
+room-t0-11,T0.11,Tajná místnost I,,ano,ne,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-11
+room-t0-12,T0.12,Tajná místnost II,,ano,ne,,,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-12
+room-t0-13,T0.13,Tajná místnost III,,ano,ne,,0.1,,nav-v0-z0 nav-z0-m0 nav-m0-t0 nav-t0-13
