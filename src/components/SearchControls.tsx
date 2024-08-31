@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {FaSearch} from "react-icons/fa";
 import Select, {createFilter} from 'react-select'
-import {IRoom, getTextContent} from "./util";
+import {IRoom, getTextContent} from "../util";
 
 
 interface SearchControlsProps {

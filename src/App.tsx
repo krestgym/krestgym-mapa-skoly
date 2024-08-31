@@ -1,11 +1,11 @@
 import {useCallback, useEffect, useState} from "react";
 import {IRoom, parseBool} from "./util";
-import SvgView from "./SvgView";
-import RoomInfoModal from "./RoomInfoModal";
-import LabelControls from "./LabelControls";
-import SearchControls from "./SearchControls";
-import FloorControls from "./FloorControls";
-import MapControls from "./MapControls";
+import SvgView from "./components/SvgView";
+import RoomInfoModal from "./components/RoomInfoModal";
+import LabelControls from "./components/LabelControls";
+import SearchControls from "./components/SearchControls";
+import FloorControls from "./components/FloorControls";
+import MapControls from "./components/MapControls";
 import {Graph} from "./graph";
 
 

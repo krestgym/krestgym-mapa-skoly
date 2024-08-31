@@ -1,4 +1,4 @@
-import {getFloor} from "./util";
+import {getFloor} from "../util";
 
 
 interface FloorControlsProps {

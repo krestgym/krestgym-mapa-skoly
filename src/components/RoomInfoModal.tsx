@@ -1,5 +1,5 @@
 import {ReactNode, useEffect, useRef} from "react";
-import {IRoom} from "./util";
+import {IRoom} from "../util";
 
 interface RoomInfoModalProps {
 	children?: ReactNode;

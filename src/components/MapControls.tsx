@@ -1,5 +1,5 @@
 import {TbHome, TbZoomIn, TbZoomOut} from "react-icons/tb";
-import {Graph} from "./graph";
+import {Graph} from "../graph";
 
 interface MapControlsProps {
 	graph: Graph;

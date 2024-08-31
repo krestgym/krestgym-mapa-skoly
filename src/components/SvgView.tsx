@@ -1,8 +1,8 @@
 import {useEffect, useMemo, useRef, useState} from "react";
-import {Graph} from './graph';
+import {Graph} from '../graph';
 import SvgTextLabel from "./SvgTextLabel";
 import ScaleLoader from "react-spinners/ScaleLoader";
-import {IRoom} from "./util";
+import {IRoom} from "../util";
 
 interface SvgViewProps{
 	rooms: IRoom[];
