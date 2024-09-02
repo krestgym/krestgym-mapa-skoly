@@ -29,7 +29,7 @@ export default function FloorControls({floorSelected, onFloorChanged, navigatedR
 				<button className={getButtonClasses(0)} onClick={() => onFloorChanged(0)}>Přízemí</button>
 			</div>
 			<div>
-				{floor > 0 ?
+				{floor ? //this is intentional: it checks for both null and floor is not 0
 				<svg className="floor-indicator" viewBox="0 0 4 12">
 					<path d={`M 0 10 l 3 0 l 0 -${floor * 4} l -3 0`} className="nav" />
 					<path d={`M 0.2 ${10 - 4 * floor} l 1 -1 m -1 1 l 1 1`}></path>

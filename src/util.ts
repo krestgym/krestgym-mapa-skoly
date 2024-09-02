@@ -27,7 +27,7 @@ export function getFloor(id: string) {
 		const floor = parseInt(match[1]);
 		if(!isNaN(floor)) return floor;
 	}
-	return -1;
+	return null;
 }
 
 // Get innerText from React Element
