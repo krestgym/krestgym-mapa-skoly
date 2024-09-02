@@ -6,12 +6,12 @@ import LabelControls from "./components/LabelControls";
 import SearchControls from "./components/SearchControls";
 import FloorControls from "./components/FloorControls";
 import MapControls from "./components/MapControls";
-import {Graph} from "./graph";
+import {SVGViewer} from "./SVGViewer";
 
 
 export default function App() {
 
-	const [graph, setGraph] = useState<Graph | null>(null);
+	const [viewer, setViewer] = useState<SVGViewer | null>(null);
 	
 	const [rooms, setRooms] = useState<IRoom[]>([]);
 
@@ -68,11 +68,11 @@ export default function App() {
 
 	return (
 		<>
-			<SvgView rooms={rooms} showRoomNumbers={showNumbers} showRoomNames={showNames} floor={floorSelected} onElementClicked={onRoomClicked} navigatedRoom={navigatedRoom} setGraph={setGraph} />
+			<SvgView rooms={rooms} showRoomNumbers={showNumbers} showRoomNames={showNames} floor={floorSelected} onElementClicked={onRoomClicked} navigatedRoom={navigatedRoom} setViewer={setViewer} />
 			<FloorControls floorSelected={floorSelected} onFloorChanged={setFloorSelected} navigatedRoom={navigatedRoom}/>
 			<SearchControls rooms={rooms} onNavigate={id => setNavigatedRoom(id)} onCancelNavigation={() => setNavigatedRoom(null)} navigatedRoom={navigatedRoom}/>
 			<LabelControls showNumbers={showNumbers} showNames={showNames} setShowNumbers={setShowNumbers} setShowNames={setShowNames} />
-			{graph ? <MapControls graph={graph} /> : undefined }
+			{viewer ? <MapControls viewer={viewer} /> : undefined }
 			<RoomInfoModal show={showModal} room={currentRoom} onClosed={() => setShowModal(false)}>
 				<button onClick={onDialogNavigationStarted} className="button button-secondary">{navigatedRoom === currentRoom?.id ? 'Zrušit navigaci' : 'Navigovat'}</button>
 			</RoomInfoModal>

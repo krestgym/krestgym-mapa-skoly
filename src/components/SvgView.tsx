@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
-import {Graph} from '../graph';
+import {SVGViewer} from '../SVGViewer';
 import SvgTextLabel from "./SvgTextLabel";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import {IRoom} from "../util";
@@ -11,10 +11,10 @@ interface SvgViewProps{
 	floor: number;
 	onElementClicked?: (id: string) => void;
 	navigatedRoom: string | null;
-	setGraph?: (graph: Graph) => void;
+	setViewer?: (viewer: SVGViewer) => void;
 }
 
-export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, onElementClicked, navigatedRoom, setGraph}: SvgViewProps) {
+export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, onElementClicked, navigatedRoom, setViewer}: SvgViewProps) {
 	
 	const [lastSvgUpdate, setLastSvgUpdate] = useState(0);
 	const [showLoader, setShowLoader] = useState(true);
@@ -36,8 +36,8 @@ export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, o
 					svgElement.current = planElement.current.querySelector('svg');
 				}
 				if(svgElement.current) {
-					const graph = new Graph(svgElement.current);
-					if(setGraph) setGraph(graph);
+					const graph = new SVGViewer(svgElement.current);
+					if(setViewer) setViewer(graph);
 					if(textContainerElement.current) svgElement.current.appendChild(textContainerElement.current);
 				}
 
