@@ -52,6 +52,7 @@ export default function SearchControls({rooms, onNavigate, onCancelNavigation, n
 					}}
 					onChange={val => setSelectedRoom(val?.value ?? '')}
 					placeholder="Vyberte učebnu"
+					noOptionsMessage={() => "Nenalezeny žádné místnosti"}
 					className="select"
 					styles={{
 						control: (baseStyles, state) => ({
