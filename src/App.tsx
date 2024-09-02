@@ -30,27 +30,28 @@ export default function App() {
 		  .then(res => res.text())
 		  .then(res => {
 			//setTimeout(() => {
-			const parsedRooms: IRoom[] = [];
-			res.split('\n').forEach(line => {
-				const room = line.split(',');
-				const parsedRoom = {
-					id: room[0] ?? '',
-					number: room[1] ?? '',
-					name: room[2] ?? '',
-					extraInfo: room[3] ?? '',
-					showNumber: parseBool(room[4]),
-					showName: parseBool(room[5]),
-					xOffset: parseFloat(room[6]),
-					yOffset: parseFloat(room[7]),
-					fontSize: parseFloat(room[8]),
-					nav: room[9]?.split(' ') ?? [],
-				};
-				if(isNaN(parsedRoom.xOffset)) parsedRoom.xOffset = 0;
-				if(isNaN(parsedRoom.yOffset)) parsedRoom.yOffset = 0;
-				if(isNaN(parsedRoom.fontSize)) parsedRoom.fontSize = 0;
-				parsedRooms.push(parsedRoom);
-			});
-			  setRooms(parsedRooms);
+				const parsedRooms: IRoom[] = [];
+				res.split('\n').forEach(line => {
+					const room = line.split(',');
+					const parsedRoom = {
+						id: room[0] ?? '',
+						number: room[1] ?? '',
+						name: room[2] ?? '',
+						extraInfo: room[3] ?? '',
+						showNumber: parseBool(room[4]),
+						showName: parseBool(room[5]),
+						showInSelect: parseBool(room[6]),
+						xOffset: parseFloat(room[7]),
+						yOffset: parseFloat(room[8]),
+						fontSize: parseFloat(room[9]),
+						nav: room[10]?.split(' ') ?? [],
+					};
+					if(isNaN(parsedRoom.xOffset)) parsedRoom.xOffset = 0;
+					if(isNaN(parsedRoom.yOffset)) parsedRoom.yOffset = 0;
+					if(isNaN(parsedRoom.fontSize)) parsedRoom.fontSize = 0;
+					parsedRooms.push(parsedRoom);
+				});
+				setRooms(parsedRooms);
 			//}, 2000);
 		});
 	}, []);

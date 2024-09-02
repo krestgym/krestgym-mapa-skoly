@@ -6,6 +6,7 @@ export interface IRoom {
 	extraInfo: string;
 	showNumber: boolean;
 	showName: boolean;
+	showInSelect: boolean;
 	xOffset: number;
 	yOffset: number;
 	fontSize: number;
