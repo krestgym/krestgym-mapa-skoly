@@ -17,6 +17,7 @@ interface SvgViewProps{
 export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, onElementClicked, navigatedRoom, setViewer}: SvgViewProps) {
 	
 	const [lastSvgUpdate, setLastSvgUpdate] = useState(0);
+	const [lastLabelsUpdate, setLastLabelsUpdate] = useState(0);
 	const [showLoader, setShowLoader] = useState(true);
 
 	const planElement = useRef<HTMLDivElement>(null);
@@ -40,11 +41,14 @@ export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, o
 					if(setViewer) setViewer(graph);
 					if(textContainerElement.current) svgElement.current.appendChild(textContainerElement.current);
 				}
-
-				setShowLoader(false);
 			//}, 2000);
 		});
-	}, []);
+	}, [rooms]);
+
+	useEffect(() => {
+		//hide loader when both map and labels are loaded
+		if(lastSvgUpdate && lastLabelsUpdate) setShowLoader(false);
+	}, [lastSvgUpdate, lastLabelsUpdate]);
 
 	useEffect(() => {
 		//console.log('updating floor');
@@ -59,7 +63,7 @@ export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, o
 			svgElement.current.querySelectorAll<SVGTextElement>(`.layer-floor-${i}`).forEach(e => e.style.visibility = (i === floor) ? 'visible' : 'hidden')
 		}
 
-	}, [floor, lastSvgUpdate]);
+	}, [floor, lastSvgUpdate, lastLabelsUpdate]);
 
 	useEffect(() => {
 		if(!svgElement.current) return;
@@ -84,6 +88,7 @@ export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, o
 	}, [rooms, navigatedRoom, lastSvgUpdate]);
 
 	const textLabels = useMemo(() => {
+		if(rooms.length) setLastLabelsUpdate(Date.now());
 		return rooms.map((room, i) => {
 			if(!room.id) return undefined;
 			const el = svgElement.current?.querySelector(`#${room.id}`);
@@ -93,13 +98,15 @@ export default function SvgView({rooms, showRoomNumbers, showRoomNames, floor, o
 				el.addEventListener('click', () => onElementClicked(room.id));
 			}
 
-			let floor = -1;
+			let floor = null;
 			for(let i = 0; i < 3; i++){
 				if(el.matches(`#floor-${i} *`)) {
 					floor = i;
 					break;
 				}
 			}
+			if(floor === null) return undefined;
+
 			return <SvgTextLabel
 				key={i}
 				element={el as SVGPathElement}

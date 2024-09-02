@@ -29,6 +29,7 @@ export default function App() {
 		fetch('rooms.csv')
 		  .then(res => res.text())
 		  .then(res => {
+			//setTimeout(() => {
 			const parsedRooms: IRoom[] = [];
 			res.split('\n').forEach(line => {
 				const room = line.split(',');
@@ -50,6 +51,7 @@ export default function App() {
 				parsedRooms.push(parsedRoom);
 			});
 			  setRooms(parsedRooms);
+			//}, 2000);
 		});
 	}, []);
 
