@@ -25,6 +25,7 @@ export default function SvgTextLabel({element, roomNumber, roomName, xOffset, yO
 		whiteSpace: 'collapse',
 		userSelect: 'none',
 		pointerEvents: 'none',
+		color: 'black',
 		fontSize: `${fontSize ? fontSize : 1}px`,
 		textAnchor: 'middle',
 		dominantBaseline: 'central',

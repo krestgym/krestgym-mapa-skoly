@@ -123,6 +123,7 @@
 
 			.room {
 				transition: all 0.05s;
+				print-color-adjust: exact;
 			}
 
 			.room:hover {
@@ -144,18 +145,21 @@
 				fill-opacity: 1;
 				fill: #feffeb;
 				display: inline;
+				print-color-adjust: exact;
 			}
 
 			.hall-green {
 				fill-opacity: 1;
 				fill: #e3ffdb;
 				display: inline;
+				print-color-adjust: exact;
 			}
 
 			.hall-blue {
 				fill-opacity: 1;
 				fill: #ebf7ff;
 				display: inline;
+				print-color-adjust: exact;
 			}
 
 			.room-yellow {

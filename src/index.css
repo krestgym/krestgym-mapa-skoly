@@ -33,6 +33,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 	transition: all 0.1s;
 	font-family: inherit;
 	user-select: none;
+	print-color-adjust: exact;
 }
 
 .button:hover {
@@ -77,8 +78,9 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 	margin: -2px 4px 0 3px;
 	border-radius: 5px;
 	border: 2px solid var(--checkbox-color);
-	display: inline;
+	display: inline-block;
 	vertical-align: middle;
+	print-color-adjust: exact;
 }
 
 .checkbox:checked {
@@ -156,6 +158,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 	padding: 10px;
 	background: #ddd;
 	color: black;
+	border: 2px solid #ddd;
 	border-radius: 10px;
 	transition: transform 0.3s ease-out;
 	z-index: 2;
@@ -229,6 +232,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 	border: none;
 	cursor: pointer;
 	align-self: flex-end;
+	print-color-adjust: exact;
 }
 
 .control-close-button.left {
@@ -317,6 +321,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 	top: auto;
 	margin: 5px;
 	background: none;
+	border: none;
 	gap: 3px;
 }
 
